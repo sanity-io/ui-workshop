@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-beta.13](https://github.com/sanity-io/ui-workshop/compare/v1.0.0-beta.12...v1.0.0-beta.13) (2022-11-26)
+
+### Bug Fixes
+
+- narrow screen navigation ([b0c1ffa](https://github.com/sanity-io/ui-workshop/commit/b0c1ffa94141c4829376fd48a3f3e191fc3aea63))
+
 ## [1.0.0-beta.12](https://github.com/sanity-io/ui-workshop/compare/v1.0.0-beta.11...v1.0.0-beta.12) (2022-11-25)
 
 ### Features
