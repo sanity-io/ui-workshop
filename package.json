@@ -80,7 +80,7 @@
     "workshop:start": "serve -p 1337 -s .workshop/dist"
   },
   "dependencies": {
-    "@vitejs/plugin-react": "^2.2.0",
+    "@vitejs/plugin-react": "^3.0.0",
     "axe-core": "^4.5.2",
     "cac": "^6.7.14",
     "chokidar": "^3.5.3",
