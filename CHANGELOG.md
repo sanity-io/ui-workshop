@@ -5,6 +5,14 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-beta.13](https://github.com/sanity-io/ui-workshop/compare/v1.0.0-beta.12...v1.0.0-beta.13) (2023-02-04)
+
+### Bug Fixes
+
+- **deps:** update dependencies (non-major) ([#2](https://github.com/sanity-io/ui-workshop/issues/2)) ([669d74a](https://github.com/sanity-io/ui-workshop/commit/669d74a12f66c031cbbcc1e3f69facfe3f111593))
+- narrow screen navigation ([b0c1ffa](https://github.com/sanity-io/ui-workshop/commit/b0c1ffa94141c4829376fd48a3f3e191fc3aea63))
+- navigator font size ([eb80c73](https://github.com/sanity-io/ui-workshop/commit/eb80c73fd64e9b42bcfbedbf6beb2f9adf0a5b76))
+
 ## [1.2.0](https://github.com/sanity-io/ui-workshop/compare/v1.1.8...v1.2.0) (2023-01-06)
 
 ### Features
