@@ -1,9 +1,10 @@
 {
+  "type": "module",
   "name": "@sanity/ui-workshop",
-  "version": "1.0.0-beta.13",
+  "version": "1.2.0",
   "sideEffects": false,
   "bin": {
-    "workshop": "./bin/workshop"
+    "workshop": "./bin/workshop.cjs"
   },
   "files": [
     "bin",
@@ -12,36 +13,52 @@
   ],
   "types": "./dist/index.d.ts",
   "source": "./exports/index.ts",
-  "module": "./dist/index.esm.js",
-  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "main": "./dist/index.cjs",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "source": "./exports/index.ts",
-      "import": "./dist/index.esm.js",
-      "require": "./dist/index.js",
-      "default": "./dist/index.esm.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "node": {
+        "import": "./dist/node/index.cjs.js",
+        "require": "./dist/index.cjs"
+      },
+      "default": "./dist/index.js"
     },
     "./plugin-a11y": {
       "types": "./dist/plugin-a11y.d.ts",
       "source": "./exports/plugin-a11y.ts",
-      "import": "./dist/plugin-a11y.esm.js",
-      "require": "./dist/plugin-a11y.js",
-      "default": "./dist/plugin-a11y.esm.js"
+      "import": "./dist/plugin-a11y.js",
+      "require": "./dist/plugin-a11y.cjs",
+      "node": {
+        "import": "./dist/node/plugin-a11y.cjs.js",
+        "require": "./dist/plugin-a11y.cjs"
+      },
+      "default": "./dist/plugin-a11y.js"
     },
     "./plugin-perf": {
       "types": "./dist/plugin-perf.d.ts",
       "source": "./exports/plugin-perf.ts",
-      "import": "./dist/plugin-perf.esm.js",
-      "require": "./dist/plugin-perf.js",
-      "default": "./dist/plugin-perf.esm.js"
+      "import": "./dist/plugin-perf.js",
+      "require": "./dist/plugin-perf.cjs",
+      "node": {
+        "import": "./dist/node/plugin-perf.cjs.js",
+        "require": "./dist/plugin-perf.cjs"
+      },
+      "default": "./dist/plugin-perf.js"
     },
     "./runtime": {
       "types": "./dist/runtime.d.ts",
       "source": "./exports/runtime.ts",
-      "import": "./dist/runtime.esm.js",
-      "require": "./dist/runtime.js",
-      "default": "./dist/runtime.esm.js"
+      "import": "./dist/runtime.js",
+      "require": "./dist/runtime.cjs",
+      "node": {
+        "import": "./dist/node/runtime.cjs.js",
+        "require": "./dist/runtime.cjs"
+      },
+      "default": "./dist/runtime.js"
     },
     "./package.json": "./package.json"
   },
@@ -74,62 +91,62 @@
     "release": "semantic-release",
     "test": "jest",
     "watch": "pkg watch --strict",
-    "workshop:build": "rimraf .workshop && node -r dotenv-flow/config -r esbuild-register scripts/build",
-    "workshop:dev": "node -r dotenv-flow/config -r esbuild-register scripts/dev",
+    "workshop:build": "rimraf .workshop && node --loader esbuild-register/loader -r dotenv-flow/config -r esbuild-register -r tsconfig-paths/register scripts/build",
+    "workshop:dev": "node --loader esbuild-register/loader -r dotenv-flow/config -r esbuild-register -r tsconfig-paths/register scripts/dev",
     "workshop:start": "serve -p 1337 -s .workshop/dist"
   },
   "dependencies": {
-    "@vitejs/plugin-react": "^2.2.0",
-    "axe-core": "^4.5.2",
+    "@vitejs/plugin-react": "^3.1.0",
+    "axe-core": "^4.6.3",
     "cac": "^6.7.14",
     "chokidar": "^3.5.3",
     "dotenv-flow": "^3.2.0",
-    "esbuild": "^0.15.15",
-    "esbuild-register": "^3.4.1",
+    "esbuild": "^0.17.5",
+    "esbuild-register": "^3.4.2",
     "express": "^4.18.2",
     "globby": "^11.1.0",
     "lodash": "^4.17.21",
     "mkdirp": "^1.0.4",
     "pako": "^2.1.0",
     "segmented-property": "^3.0.3",
-    "vite": "^3.2.4"
+    "vite": "^4.1.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.2",
+    "@babel/core": "^7.20.12",
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.18.6",
-    "@commitlint/config-conventional": "^17.3.0",
-    "@sanity/icons": "^2.0.0",
-    "@sanity/pkg-utils": "^1.18.0",
-    "@sanity/semantic-release-preset": "^2.0.2",
-    "@sanity/ui": "^1.0.0",
-    "@types/express": "^4.17.14",
-    "@types/jest": "^29.2.3",
-    "@types/lodash": "^4.14.190",
+    "@commitlint/config-conventional": "^17.4.0",
+    "@sanity/icons": "^2.2.2",
+    "@sanity/pkg-utils": "^2.1.1",
+    "@sanity/semantic-release-preset": "^2.0.5",
+    "@sanity/ui": "^1.0.12",
+    "@types/express": "^4.17.15",
+    "@types/jest": "^29.2.5",
+    "@types/lodash": "^4.14.191",
     "@types/mkdirp": "^1.0.2",
-    "@types/node": "^18.11.9",
+    "@types/node": "^18.11.18",
     "@types/pako": "^2.0.0",
-    "@types/react": "^18.0.25",
-    "@types/react-dom": "^18.0.9",
+    "@types/react": "^18.0.26",
+    "@types/react-dom": "^18.0.10",
     "@types/styled-components": "^5.1.26",
-    "@typescript-eslint/eslint-plugin": "^5.44.0",
-    "@typescript-eslint/parser": "^5.44.0",
+    "@typescript-eslint/eslint-plugin": "^5.48.0",
+    "@typescript-eslint/parser": "^5.48.0",
     "babel-jest": "^29.3.1",
-    "commitizen": "^4.2.5",
-    "commitlint": "^17.3.0",
-    "eslint": "^8.28.0",
-    "eslint-config-prettier": "^8.5.0",
+    "commitizen": "^4.2.6",
+    "commitlint": "^17.4.0",
+    "eslint": "^8.31.0",
+    "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.11",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "husky": "^8.0.2",
+    "husky": "^8.0.3",
     "jest": "^29.3.1",
     "jest-environment-jsdom": "^29.3.1",
     "npm-run-all": "^4.1.5",
-    "prettier": "^2.8.0",
+    "prettier": "^2.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
@@ -137,7 +154,8 @@
     "semantic-release": "^19.0.5",
     "serve": "^14.1.2",
     "styled-components": "^5.3.6",
-    "typescript": "^4.9.3"
+    "tsconfig-paths": "^4.1.2",
+    "typescript": "^4.9.5"
   },
   "peerDependencies": {
     "@sanity/icons": "^2",
@@ -174,7 +192,7 @@
       "prettier --write --cache --ignore-unknown"
     ]
   },
-  "packageManager": "pnpm@7.12.2",
+  "packageManager": "pnpm@7.26.3",
   "prettier": {
     "semi": false,
     "printWidth": 100,
