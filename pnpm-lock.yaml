@@ -47,7 +47,7 @@ specifiers:
   mkdirp: ^3.0.0
   npm-run-all: ^4.1.5
   pako: ^2.1.0
-  prettier: ^2.8.4
+  prettier: ^3.0.0
   react: ^18.2.0
   react-dom: ^18.2.0
   react-is: ^18.2.0
@@ -104,14 +104,14 @@ devDependencies:
   eslint-config-prettier: 8.6.0_eslint@8.34.0
   eslint-plugin-import: 2.27.5_mcvs2y73sfmcxqzpjj5lr7a2m4
   eslint-plugin-jsx-a11y: 6.7.1_eslint@8.34.0
-  eslint-plugin-prettier: 4.2.1_u5wnrdwibbfomslmnramz52buy
+  eslint-plugin-prettier: 4.2.1_w3yk5tlnl3dlr4ytygm4yxkc7e
   eslint-plugin-react: 7.32.2_eslint@8.34.0
   eslint-plugin-react-hooks: 4.6.0_eslint@8.34.0
   husky: 8.0.3
   jest: 29.4.2_@types+node@18.13.0
   jest-environment-jsdom: 29.4.2
   npm-run-all: 4.1.5
-  prettier: 2.8.4
+  prettier: 3.0.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-is: 18.2.0
@@ -5373,7 +5373,7 @@ packages:
       semver: 6.3.0
     dev: true
 
-  /eslint-plugin-prettier/4.2.1_u5wnrdwibbfomslmnramz52buy:
+  /eslint-plugin-prettier/4.2.1_w3yk5tlnl3dlr4ytygm4yxkc7e:
     resolution: {integrity: sha512-f/0rXLXUt0oFYs8ra4w49wYZBG5GKZpAYsJSm6rnYL5uVDjd+zowwMwVZHnAjf4edNrKpCDYfXDgmRE/Ak7QyQ==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -5386,7 +5386,7 @@ packages:
     dependencies:
       eslint: 8.34.0
       eslint-config-prettier: 8.6.0_eslint@8.34.0
-      prettier: 2.8.4
+      prettier: 3.0.0
       prettier-linter-helpers: 1.0.0
     dev: true
 
@@ -8479,6 +8479,12 @@ packages:
   /prettier/2.8.4:
     resolution: {integrity: sha512-vIS4Rlc2FNh0BySk3Wkd6xmwxB0FpOndW5fisM5H8hsZSxU2VWVB5CWIkIjWvrHjIhxk2g3bfMKM87zNTrZddw==}
     engines: {node: '>=10.13.0'}
+    hasBin: true
+    dev: true
+
+  /prettier/3.0.0:
+    resolution: {integrity: sha512-zBf5eHpwHOGPC47h0zrPyNn+eAEIdEzfywMoYn2XPi0P44Zp0tSq64rq0xAREh4auw2cJZHo9QUob+NqCQky4g==}
+    engines: {node: '>=14'}
     hasBin: true
     dev: true
 
