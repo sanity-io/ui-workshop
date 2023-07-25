@@ -152,7 +152,7 @@
     "rimraf": "^4.4.1",
     "semantic-release": "^21.0.7",
     "serve": "^14.2.0",
-    "styled-components": "^5.3.11",
+    "styled-components": "^6.0.5",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.1.6"
   },
