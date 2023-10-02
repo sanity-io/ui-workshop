@@ -100,7 +100,7 @@
     "axe-core": "^4.7.2",
     "cac": "^6.7.14",
     "chokidar": "^3.5.3",
-    "dotenv-flow": "^3.3.0",
+    "dotenv-flow": "^4.0.0",
     "esbuild": "^0.19.2",
     "esbuild-register": "^3.4.2",
     "express": "^4.18.2",
