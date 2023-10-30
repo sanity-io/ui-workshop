@@ -42,8 +42,8 @@ dependencies:
     specifier: ^2.1.0
     version: 2.1.0
   segmented-property:
-    specifier: ^3.0.3
-    version: 3.0.3
+    specifier: ^4.0.0
+    version: 4.0.0
   vite:
     specifier: ^4.4.9
     version: 4.4.9(@types/node@18.17.14)
@@ -9110,8 +9110,9 @@ packages:
       loose-envify: 1.4.0
     dev: true
 
-  /segmented-property@3.0.3:
-    resolution: {integrity: sha512-xn4hZYOJzRMnLJqQgi/IfEpWnnI/9KyqWGcxQuYzZ4xRATvJ4k8IlvFFlPOCm9evFo+/R6YkjMT3BXkhM7LZhg==}
+  /segmented-property@4.0.0:
+    resolution: {integrity: sha512-F9+rN3c7NIYhNch/zMiJN3RwUXW+Y29UiFtSCKFBAw+JMMTxACCCnvMsZo6ExLTLjh0XStvWjL6Nyb0c4lLHxg==}
+    engines: {node: '>=18.0.0'}
     dev: false
 
   /semantic-release-license@1.0.3:

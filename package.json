@@ -108,7 +108,7 @@
     "lodash": "^4.17.21",
     "mkdirp": "^2.1.6",
     "pako": "^2.1.0",
-    "segmented-property": "^3.0.3",
+    "segmented-property": "^4.0.0",
     "vite": "^4.4.9"
   },
   "devDependencies": {
