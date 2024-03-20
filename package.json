@@ -144,7 +144,7 @@
     "axe-core": "^4.8.4",
     "cac": "^6.7.14",
     "chokidar": "^3.6.0",
-    "cpx2": "^2.0.0",
+    "cpx2": "^4.0.0",
     "dotenv-flow": "^4.0.1",
     "esbuild": "^0.20.2",
     "esbuild-register": "^3.5.0",
