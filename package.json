@@ -51,7 +51,6 @@
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
-  "source": "./exports/index.ts",
   "types": "./dist/index.d.ts",
   "typesVersions": {
     "*": {
