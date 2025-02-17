@@ -170,7 +170,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-is": "^19.0.0",
-    "semantic-release": "^23.1.1",
+    "semantic-release": "^24.2.3",
     "styled-components": "^6.1.14",
     "tsconfig-paths": "^4.2.0",
     "typescript": "5.7.3",
