@@ -76,8 +76,8 @@ importers:
         specifier: ^1.0.3
         version: 1.0.3(prettier@3.5.1)
       '@sanity/semantic-release-preset':
-        specifier: ^4.1.8
-        version: 4.1.8(semantic-release@23.1.1(typescript@5.7.3))
+        specifier: ^5.0.0
+        version: 5.0.0(semantic-release@23.1.1(typescript@5.7.3))
       '@sanity/ui':
         specifier: ^2.13.1
         version: 2.13.1(@emotion/is-prop-valid@1.2.2)(react-dom@19.0.0(react@19.0.0))(react-is@19.0.0)(react@19.0.0)(styled-components@6.1.15(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
@@ -1248,11 +1248,11 @@ packages:
     peerDependencies:
       prettier: ^3.2.5
 
-  '@sanity/semantic-release-preset@4.1.8':
-    resolution: {integrity: sha512-D9M2R7sDj3cMEIcCdvCMpFqr8yIAkFbpbMSE5m9LrPgnFl12sfaSeMCeFHM5/ArHsJVIcQIVsQFbP+c1m1a8vg==}
+  '@sanity/semantic-release-preset@5.0.0':
+    resolution: {integrity: sha512-2lCuU57OZW6WY7O8d4vjbpghQIc9lnxS9+dLnzrBYh8e6pA467DxlCNum4NgDeDyHxNh9HGXNalXEWJz8tec+A==}
     engines: {node: '>= 20.8'}
     peerDependencies:
-      semantic-release: ^22.0.12 || ^23.0.2 || ^24.0.0
+      semantic-release: ^24
 
   '@sanity/ui@2.13.1':
     resolution: {integrity: sha512-r4wbENGZSg9g7Ea5yeL9ffAgU/r268jFfu4qTUa3CBq6CjoYxYRnKITBURydsu9R46Py2AZr4KpY2MgxXcV9Rg==}
@@ -6472,7 +6472,7 @@ snapshots:
       prettier: 3.5.1
       prettier-plugin-packagejson: 2.5.6(prettier@3.5.1)
 
-  '@sanity/semantic-release-preset@4.1.8(semantic-release@23.1.1(typescript@5.7.3))':
+  '@sanity/semantic-release-preset@5.0.0(semantic-release@23.1.1(typescript@5.7.3))':
     dependencies:
       '@semantic-release/changelog': 6.0.3(semantic-release@23.1.1(typescript@5.7.3))
       '@semantic-release/exec': 6.0.3(semantic-release@23.1.1(typescript@5.7.3))
