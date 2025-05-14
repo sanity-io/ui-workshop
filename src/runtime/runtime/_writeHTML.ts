@@ -2,7 +2,7 @@ import {writeFile} from 'fs/promises'
 import path from 'path'
 
 const HTML = `<!DOCTYPE html>
-<html lang="en">
+<html class="s-light s-transparent s-card" lang="en">
   <head>
     <meta charset="utf-8" />
     <meta

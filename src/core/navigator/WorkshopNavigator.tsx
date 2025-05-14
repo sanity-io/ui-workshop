@@ -1,5 +1,7 @@
 import {SearchIcon} from '@sanity/icons'
 import {Box, BoxDisplay, Card, Flex, Layer, TextInput} from '@sanity/ui'
+import {ResponsiveProp} from '@sanity/ui/css'
+import {FontTextSize} from '@sanity/ui/theme'
 import {memo, useCallback, useMemo, useState} from 'react'
 import styled from 'styled-components'
 
@@ -14,7 +16,7 @@ import {MenuCollection, MenuList, MenuScope} from './types'
 const Root = styled(Card)`
   overflow: hidden;
 
-  @media screen and (min-width: ${({theme}) => theme.sanity.media[1]}px) {
+  @media screen and (min-width: 600px) {
     border-right: 1px solid var(--card-border-color);
     min-width: 180px;
     max-width: 300px;
@@ -24,7 +26,7 @@ const Root = styled(Card)`
 
 const flexNoneStyle: React.CSSProperties = {flex: 'none'}
 const lineHeightNoneStyle: React.CSSProperties = {lineHeight: 0}
-const textInputFontSize = [2, 2, 1]
+const textInputFontSize: ResponsiveProp<FontTextSize> = [2, 2, 1]
 
 /** @internal */
 export const WorkshopNavigator = memo(function WorkshopNavigator(props: {

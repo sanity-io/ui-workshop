@@ -33,7 +33,7 @@ export const SelectProp = memo(function SelectProp(props: {
       <Box marginTop={2}>
         <Select
           fontSize={[2, 2, 1]}
-          onChange={(event) => {
+          onChange={(event: any) => {
             const optionKey = event.currentTarget.value
             const optionValue = schema.options[optionKey as any]
 

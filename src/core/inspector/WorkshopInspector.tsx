@@ -11,7 +11,7 @@ import {InspectorTab} from './types'
 const Root = styled(Card)`
   overflow: hidden;
 
-  @media screen and (min-width: ${({theme}) => theme.sanity.media[1]}px) {
+  @media screen and (min-width: 600px) {
     border-left: 1px solid var(--card-border-color);
     min-width: 180px;
     max-width: 300px;

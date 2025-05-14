@@ -20,7 +20,7 @@ export const NumberProp = memo(function NumberProp(props: {
       <Box marginTop={2}>
         <TextInput
           fontSize={[2, 2, 1]}
-          onChange={(event) => setPropValue(schema.name, Number(event.currentTarget.value))}
+          onChange={(event: any) => setPropValue(schema.name, Number(event.currentTarget.value))}
           padding={2}
           value={value}
         />

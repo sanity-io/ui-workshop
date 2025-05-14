@@ -1,3 +1,4 @@
+import {vars} from '@sanity/ui/css'
 import {createGlobalStyle} from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
@@ -20,6 +21,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: ${({theme}) => theme.sanity.color.base.bg};
+    background-color: ${vars.color.bg};
+    overflow: hidden;
   }
 `

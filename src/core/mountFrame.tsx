@@ -1,4 +1,5 @@
-import {studioTheme, ThemeColorSchemeKey, ThemeProvider, usePrefersDark} from '@sanity/ui'
+import {CardProvider, usePrefersDark} from '@sanity/ui'
+import {ThemeColorSchemeKey} from '@sanity/ui/theme'
 import {StrictMode, useState} from 'react'
 import {createRoot} from 'react-dom/client'
 
@@ -27,9 +28,9 @@ function Root(props: {config: WorkshopConfig}) {
   const [scheme, setScheme] = useState<ThemeColorSchemeKey>(prefersDark ? 'dark' : 'light')
 
   return (
-    <ThemeProvider scheme={scheme} theme={config.theme || studioTheme}>
+    <CardProvider scheme={scheme} tone="transparent">
       <GlobalStyle />
       <WorkshopFrame config={config} setScheme={setScheme} />
-    </ThemeProvider>
+    </CardProvider>
   )
 }

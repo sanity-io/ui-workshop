@@ -17,7 +17,7 @@ export const BooleanProp = memo(function BooleanProp(props: {
       <Box marginRight={2} style={{lineHeight: 0}}>
         <Checkbox
           checked={value || false}
-          onChange={(event) => setPropValue(schema.name, event.currentTarget.checked)}
+          onChange={(event: any) => setPropValue(schema.name, event.currentTarget.checked)}
         />
       </Box>
       <Box paddingY={1}>

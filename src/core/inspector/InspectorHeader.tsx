@@ -9,7 +9,7 @@ const MemoTab = memo(Tab)
 const Root = styled(Card)`
   line-height: 0;
 
-  @media screen and (max-width: ${({theme}) => theme.sanity.media[1] - 1}px) {
+  @media screen and (max-width: 600px) {
     text-align: center;
   }
 `

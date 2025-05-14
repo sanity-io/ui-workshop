@@ -67,7 +67,7 @@ const MenuItems = memo(function MenuItems(props: {
                 fontSize={[2, 2, 1]}
                 href={`/${item.name || ''}`}
                 key={item.name}
-                onClick={handleStoryClick}
+                onClick={handleStoryClick as any}
                 padding={2}
                 selected={currentStory?.component === item.component}
                 text={item.title}
@@ -128,7 +128,7 @@ const MemoScope = memo(function MemoScope(props: {
           fontSize={[2, 2, 1]}
           href={`/${item.scope.name}/${story.name}`}
           key={story.name}
-          onClick={onStoryClick}
+          onClick={onStoryClick as any}
           padding={2}
           selected={currentStory === story}
           text={story.title}

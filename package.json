@@ -140,7 +140,7 @@
     "@sanity/pkg-utils": "^6.13.4",
     "@sanity/prettier-config": "^1.0.3",
     "@sanity/semantic-release-preset": "^4.1.8",
-    "@sanity/ui": "^2.15.14",
+    "@sanity/ui": "^3.0.0",
     "@types/cpx": "^1.5.5",
     "@types/express": "^5.0.1",
     "@types/lodash": "^4.17.16",
@@ -176,15 +176,19 @@
     "vitest": "^2.1.9"
   },
   "peerDependencies": {
-    "@sanity/icons": "^2 || ^3",
-    "@sanity/ui": "^1 || ^2",
-    "react": "^18 || ^19",
-    "react-dom": "^18 || ^19",
-    "styled-components": "^5.2 || ^6"
+    "@sanity/icons": "^3",
+    "@sanity/ui": "^3",
+    "react": "^19",
+    "react-dom": "^19"
   },
   "packageManager": "pnpm@9.15.9",
   "publishConfig": {
     "access": "public"
+  },
+  "pnpm": {
+    "overrides": {
+      "@sanity/ui": "file:registry/sanity-ui-3.0.0-local.11.tgz"
+    }
   },
   "esm.sh": {
     "bundle": false

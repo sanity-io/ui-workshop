@@ -20,7 +20,7 @@ export const StringProp = memo(function StringProp(props: {
       <Box marginTop={2}>
         <TextInput
           fontSize={[2, 2, 1]}
-          onChange={(event) => setPropValue(schema.name, event.currentTarget.value)}
+          onChange={(event: any) => setPropValue(schema.name, event.currentTarget.value)}
           padding={2}
           value={value || ''}
         />

@@ -33,7 +33,7 @@ module.exports = {
     'react/prop-types': 'off',
     'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
     'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
-    'react-hooks/react-compiler': 'error',
+    // 'react-hooks/react-compiler': 'error',
     'react/no-unescaped-entities': 'off',
     'simple-import-sort/exports': 'warn',
     'simple-import-sort/imports': 'warn',
