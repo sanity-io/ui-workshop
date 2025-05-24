@@ -71,17 +71,17 @@
   ],
   "scripts": {
     "build": "run-s clean pkg:build",
-    "pkg:build": "pkg build --check --strict",
-    "ts:check": "tsc --build",
     "clean": "rimraf .workshop dist",
     "commit": "cz",
     "dev": "run-p workshop:dev",
     "format": "prettier --write --cache --ignore-unknown .",
     "lint": "eslint . --ext .cjs,.js,.jsx,.mjs,.ts,.tsx",
+    "pkg:build": "pkg build --check --strict",
     "prepare": "husky install",
     "prepublishOnly": "pnpm run build",
     "release": "semantic-release",
     "test": "vitest",
+    "ts:check": "tsc --build",
     "watch": "pkg watch --strict",
     "workshop:build": "run-s clean && node -r dotenv-flow/config -r esbuild-register -r tsconfig-paths/register scripts/build",
     "workshop:dev": "node -r dotenv-flow/config -r esbuild-register -r tsconfig-paths/register scripts/dev",
@@ -137,7 +137,7 @@
     "@commitlint/config-conventional": "^19.8.0",
     "@sanity/browserslist-config": "^1.0.5",
     "@sanity/icons": "^3.7.0",
-    "@sanity/pkg-utils": "^6.13.4",
+    "@sanity/pkg-utils": "^7.2.2",
     "@sanity/prettier-config": "^1.0.3",
     "@sanity/semantic-release-preset": "^4.1.8",
     "@sanity/ui": "^2.15.14",
@@ -185,6 +185,15 @@
   "packageManager": "pnpm@9.15.9",
   "publishConfig": {
     "access": "public"
+  },
+  "pnpm": {
+    "overrides": {
+      "braces": "3.0.3",
+      "esbuild": ">=0.25.0",
+      "micromatch": "4.0.8",
+      "prismjs": ">=1.30.0",
+      "vite": ">=6.3.4"
+    }
   },
   "esm.sh": {
     "bundle": false
