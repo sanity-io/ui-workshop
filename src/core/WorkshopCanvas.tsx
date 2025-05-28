@@ -1,17 +1,9 @@
-import {BoxDisplay, Card, Container, Flex, Heading, Spinner, Stack, Text} from '@sanity/ui'
+import {Box, BoxDisplay, Card, Container, Flex, Heading, Spinner, Stack, Text} from '@sanity/ui'
 import {memo, useMemo, useState} from 'react'
-import styled from 'styled-components'
 
 import {VIEWPORT_OPTIONS} from './constants'
 import {buildFrameUrl} from './helpers'
 import {useWorkshop} from './useWorkshop'
-
-const Frame = styled.iframe`
-  display: block;
-  border: 0;
-  height: 100%;
-  width: 100%;
-`
 
 /** @internal */
 export const WorkshopCanvas = memo(function WorkshopCanvas(props: {
@@ -19,13 +11,13 @@ export const WorkshopCanvas = memo(function WorkshopCanvas(props: {
   hidden: boolean
 }): React.ReactNode {
   const {frameRef, hidden} = props
-  const {frameReady, frameUrl, path, payload, scheme, title, viewport, zoom} = useWorkshop()
+  const {frameReady, frameUrl, path, payload, title, viewport, zoom} = useWorkshop()
   const viewportOption = VIEWPORT_OPTIONS.find((o) => o.name === viewport) || VIEWPORT_OPTIONS[0]
   const viewportW = viewportOption?.rect.width
   const viewportH = viewportOption?.rect.height
 
   const [initialFrameUrl] = useState(() =>
-    buildFrameUrl({baseUrl: frameUrl, path, payload, scheme, viewport, zoom}),
+    buildFrameUrl({baseUrl: frameUrl, path, payload, viewport, zoom}),
   )
 
   const containerStyle = useMemo(
@@ -44,6 +36,11 @@ export const WorkshopCanvas = memo(function WorkshopCanvas(props: {
       transformOrigin: '0 0',
       width: `${100 / zoom}%`,
       height: `${100 / zoom}%`,
+      transition: [
+        'transform 200ms ease-in-out',
+        'width 200ms ease-in-out',
+        'height 200ms ease-in-out',
+      ].join(','),
     }),
     [zoom],
   )
@@ -71,7 +68,15 @@ export const WorkshopCanvas = memo(function WorkshopCanvas(props: {
           width="auto"
         >
           <Card height="fill" shadow={1}>
-            <Frame ref={frameRef} src={initialFrameUrl} style={frameStyle} />
+            <Box
+              as="iframe"
+              height="fill"
+              ref={frameRef}
+              sizing="border"
+              src={initialFrameUrl}
+              style={frameStyle}
+              width="fill"
+            />
           </Card>
         </Container>
       </Flex>

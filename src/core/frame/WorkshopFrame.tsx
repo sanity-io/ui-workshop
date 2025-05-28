@@ -4,6 +4,7 @@ import {
   PortalProvider,
   ThemeColorSchemeKey,
   ToastProvider,
+  usePrefersDark,
 } from '@sanity/ui'
 import {memo, useCallback, useEffect, useMemo, useState} from 'react'
 
@@ -45,6 +46,8 @@ export const WorkshopFrame = memo(function WorkshopFrame(
   const channel = useMemo(() => createPubsub<WorkshopMsg>(), [])
   const [boundaryElement, setBoundaryElement] = useState<HTMLDivElement | null>(null)
   const [portalElement, setPortalElement] = useState<HTMLDivElement | null>(null)
+  const prefersDark = usePrefersDark()
+  const scheme = prefersDark ? 'dark' : 'light'
 
   // Publish messages to both frame+main
   const broadcast = useCallback(
@@ -58,8 +61,8 @@ export const WorkshopFrame = memo(function WorkshopFrame(
     [channel, main],
   )
 
-  const [{frameReady, path, payload, scheme, viewport, zoom}, setState] = useState<WorkshopState>(
-    () => getStateFromLocation(),
+  const [{frameReady, path, payload, viewport, zoom}, setState] = useState<WorkshopState>(() =>
+    getStateFromLocation(),
   )
 
   // Subscribe to global messages

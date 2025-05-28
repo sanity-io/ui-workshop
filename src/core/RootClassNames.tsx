@@ -1,39 +1,24 @@
-import {_raf2, useCard} from '@sanity/ui'
-import {card, scopeClassName as _} from '@sanity/ui/css'
-import {ReactNode, useEffect} from 'react'
+import {useCard} from '@sanity/ui'
+import {card} from '@sanity/ui/css'
+import {type ReactNode, useEffect, useRef} from 'react'
 
-export function RootClassNames(props: {element: HTMLElement}): ReactNode {
-  const {element} = props
+export function RootClassNames(): ReactNode {
   const {scheme, tone} = useCard()
 
+  const schemeRef = useRef(scheme)
+
   useEffect(() => {
-    const els = document.querySelectorAll(
-      [_('button'), _('card'), _('font')].map((n) => `.${n}`).join(', '),
-    )
-
-    // temporarily disable all transitions when the theme changes
-    for (const el of els) {
-      if (el instanceof HTMLElement) {
-        el.style.transition = 'none'
-      }
-    }
-
-    _raf2(() => {
+    if (schemeRef.current === scheme) {
       document.documentElement.className = card({scheme, tone}) ?? ''
-
-      _raf2(() => {
-        for (const el of els) {
-          if (el instanceof HTMLElement) {
-            el.style.transition = ''
-          }
-        }
-      })
-    })
-
-    return () => {
-      document.documentElement.className = ''
+      return
     }
-  }, [element, scheme, tone])
+
+    schemeRef.current = scheme
+
+    document.startViewTransition(() => {
+      document.documentElement.className = card({scheme, tone}) ?? ''
+    })
+  }, [scheme, tone])
 
   return null
 }

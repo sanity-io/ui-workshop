@@ -14,6 +14,8 @@ export default defineRuntime({
         '@sanity/ui-workshop/plugin-perf': path.resolve(EXPORTS_PATH, 'plugin-perf'),
         '@sanity/ui-workshop/runtime': path.resolve(EXPORTS_PATH, 'runtime'),
         '@sanity/ui-workshop': EXPORTS_PATH,
+
+        '@sanity/ui': path.resolve(__dirname, '../ui/exports'),
       },
     },
   }),

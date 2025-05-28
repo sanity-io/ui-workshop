@@ -1,18 +1,9 @@
 import {Card, Layer, Tab, TabList} from '@sanity/ui'
 import {CSSProperties, memo, useCallback, useMemo} from 'react'
-import styled from 'styled-components'
 
 import {InspectorTab} from './types'
 
 const MemoTab = memo(Tab)
-
-const Root = styled(Card)`
-  line-height: 0;
-
-  @media screen and (max-width: 600px) {
-    text-align: center;
-  }
-`
 
 export const InspectorHeader = memo(function InspectorHeader(props: {
   currentTabId: string | null
@@ -38,9 +29,9 @@ export const InspectorHeader = memo(function InspectorHeader(props: {
 
   return (
     <Layer style={layerStyle}>
-      <Root padding={2} shadow={1}>
-        <TabList space={1}>{children}</TabList>
-      </Root>
+      <Card padding={2} shadow={1}>
+        <TabList>{children}</TabList>
+      </Card>
     </Layer>
   )
 })

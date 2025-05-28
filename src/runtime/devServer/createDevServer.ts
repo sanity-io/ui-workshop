@@ -40,7 +40,7 @@ export async function createDevServer(options: {
 
     let htmlPath = 'index.html'
 
-    if (req.path === '/frame/') {
+    if (url.startsWith('/frame/')) {
       htmlPath = 'frame/index.html'
     }
 

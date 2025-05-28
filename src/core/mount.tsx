@@ -4,7 +4,7 @@ import {StrictMode, useEffect, useMemo, useState} from 'react'
 import {createRoot} from 'react-dom/client'
 
 import {WorkshopConfig} from './config'
-import {GlobalStyle} from './GlobalStyle'
+import {globalCss} from './globalCss'
 import {createLocationStore} from './location'
 import {RootClassNames} from './RootClassNames'
 import {Workshop} from './Workshop'
@@ -36,10 +36,12 @@ function Root(props: {config: WorkshopConfig}) {
   }, [prefersDark])
 
   return (
-    <CardProvider scheme={scheme} tone="transparent">
-      <RootClassNames element={document.documentElement} />
+    <CardProvider scheme={scheme} tone="default">
+      <RootClassNames />
+
+      <style precedence="workshop-global">{globalCss}</style>
       <StyleTags theme={theme} />
-      <GlobalStyle />
+
       <Workshop
         config={config}
         locationStore={locationStore}

@@ -3,7 +3,7 @@ import {Box, BoxDisplay, Card, Flex, Layer, TextInput} from '@sanity/ui'
 import {ResponsiveProp} from '@sanity/ui/css'
 import {FontTextSize} from '@sanity/ui/theme'
 import {memo, useCallback, useMemo, useState} from 'react'
-import styled from 'styled-components'
+import {styled} from 'styled-components'
 
 import {WorkshopScope, WorkshopStory} from '../config'
 import {EMPTY_ARRAY} from '../constants'
@@ -13,14 +13,10 @@ import {SearchResults} from './SearchResults'
 import {StoryTree} from './StoryTree'
 import {MenuCollection, MenuList, MenuScope} from './types'
 
-const Root = styled(Card)`
-  overflow: hidden;
-
+const Root = styled(Layer)`
   @media screen and (min-width: 600px) {
-    border-right: 1px solid var(--card-border-color);
     min-width: 180px;
     max-width: 300px;
-    overflow: auto;
   }
 `
 
@@ -64,7 +60,7 @@ export const WorkshopNavigator = memo(function WorkshopNavigator(props: {
   const handleSearchQueryClear = useCallback(() => setQuery(''), [])
 
   const handleStoryClick = useCallback(
-    (event: React.MouseEvent<HTMLDivElement>) => {
+    (event: React.MouseEvent<HTMLAnchorElement>) => {
       event.preventDefault()
 
       const target = event.currentTarget
@@ -98,7 +94,7 @@ const NavigatorView = memo(function NavigatorView(props: {
   menu: MenuScope | MenuList
   onSearchQueryChange: (event: React.ChangeEvent<HTMLInputElement>) => void
   onSearchQueryClear: () => void
-  onStoryClick: (event: React.MouseEvent<HTMLDivElement>) => void
+  onStoryClick: (event: React.MouseEvent<HTMLAnchorElement>) => void
   query: string
 }) {
   const {expanded, matches, menu, onSearchQueryChange, onSearchQueryClear, onStoryClick, query} =
@@ -110,7 +106,7 @@ const NavigatorView = memo(function NavigatorView(props: {
   )
 
   return (
-    <Root display={display} flex={1}>
+    <Root display={display} flex={1} overflow={['hidden', 'hidden', 'auto']} shadow={1}>
       <Flex direction="column" height="fill">
         <Layer style={flexNoneStyle}>
           <Card padding={2} shadow={1} style={lineHeightNoneStyle}>

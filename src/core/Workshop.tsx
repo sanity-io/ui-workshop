@@ -2,10 +2,10 @@ import {
   BoundaryElementProvider,
   Flex,
   PortalProvider,
-  ThemeColorSchemeKey,
   ToastProvider,
   useMediaIndex,
 } from '@sanity/ui'
+import {ThemeColorSchemeKey} from '@sanity/ui/theme'
 import {memo, useCallback, useEffect, useMemo, useRef, useState} from 'react'
 
 import {WorkshopConfig} from './config'

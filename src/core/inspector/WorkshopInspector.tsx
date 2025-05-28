@@ -1,21 +1,18 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import {Box, BoxDisplay, Card, Flex, TabPanel} from '@sanity/ui'
+
+import {Box, BoxDisplay, Flex, Layer, TabPanel} from '@sanity/ui'
 import {ElementType, memo, useState} from 'react'
-import styled from 'styled-components'
+import {styled} from 'styled-components'
 
 import {EMPTY_RECORD} from '../constants'
 import {useWorkshop} from '../useWorkshop'
 import {InspectorHeader} from './InspectorHeader'
 import {InspectorTab} from './types'
 
-const Root = styled(Card)`
-  overflow: hidden;
-
+const Root = styled(Layer)`
   @media screen and (min-width: 600px) {
-    border-left: 1px solid var(--card-border-color);
     min-width: 180px;
     max-width: 300px;
-    overflow: auto;
   }
 `
 
@@ -49,7 +46,7 @@ export const WorkshopInspector = memo(function WorkshopInspector(props: {
   const display: BoxDisplay[] = expanded ? ['block'] : ['none', 'none', 'block']
 
   return (
-    <Root display={display} flex={1}>
+    <Root display={display} flex={1} overflow={['hidden', 'hidden', 'auto']} shadow={1}>
       <Flex direction="column" height="fill">
         {showTabs && <InspectorHeader currentTabId={tabId} onTabChange={setTabId} tabs={tabs} />}
 

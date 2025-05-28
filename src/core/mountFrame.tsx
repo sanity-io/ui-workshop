@@ -1,11 +1,12 @@
-import {CardProvider, usePrefersDark} from '@sanity/ui'
-import {ThemeColorSchemeKey} from '@sanity/ui/theme'
-import {StrictMode, useState} from 'react'
+import {CardProvider, StyleTags, usePrefersDark} from '@sanity/ui'
+import {buildTheme_v3, ThemeColorSchemeKey} from '@sanity/ui/theme'
+import {StrictMode, useMemo, useState} from 'react'
 import {createRoot} from 'react-dom/client'
 
 import {WorkshopConfig} from './config'
 import {WorkshopFrame} from './frame'
-import {GlobalStyle} from './GlobalStyle'
+import {globalCss} from './globalCss'
+import {RootClassNames} from './RootClassNames'
 
 /** @beta */
 export function mountFrame(options: {config: WorkshopConfig; element: HTMLElement | null}): void {
@@ -24,12 +25,17 @@ export function mountFrame(options: {config: WorkshopConfig; element: HTMLElemen
 
 function Root(props: {config: WorkshopConfig}) {
   const {config} = props
+  const theme = useMemo(() => buildTheme_v3({tokens: config.theme}), [config.theme])
   const prefersDark = usePrefersDark()
   const [scheme, setScheme] = useState<ThemeColorSchemeKey>(prefersDark ? 'dark' : 'light')
 
   return (
     <CardProvider scheme={scheme} tone="transparent">
-      <GlobalStyle />
+      <RootClassNames />
+
+      <style precedence="workshop-global">{globalCss}</style>
+      <StyleTags theme={theme} />
+
       <WorkshopFrame config={config} setScheme={setScheme} />
     </CardProvider>
   )

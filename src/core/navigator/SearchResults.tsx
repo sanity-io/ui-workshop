@@ -6,7 +6,7 @@ import {WorkshopScope, WorkshopStory} from '../config'
 /** @internal */
 export const SearchResults = memo(function SearchResults(props: {
   matches: {scope: WorkshopScope; story: WorkshopStory}[]
-  onStoryClick: (event: React.MouseEvent<HTMLDivElement>) => void
+  onStoryClick: (event: React.MouseEvent<HTMLAnchorElement>) => void
 }) {
   const {matches, onStoryClick} = props
 
