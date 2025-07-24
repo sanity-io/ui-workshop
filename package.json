@@ -140,7 +140,7 @@
     "@sanity/pkg-utils": "^7.9.10",
     "@sanity/prettier-config": "^1.0.6",
     "@sanity/semantic-release-preset": "^4.1.8",
-    "@sanity/ui": "^2.16.9",
+    "@sanity/ui": "^3.0.1",
     "@types/cpx": "^1.5.5",
     "@types/express": "^5.0.3",
     "@types/lodash": "^4.17.20",
@@ -177,7 +177,7 @@
   },
   "peerDependencies": {
     "@sanity/icons": "^2 || ^3",
-    "@sanity/ui": "^1 || ^2",
+    "@sanity/ui": "^1 || ^2 || ^3.0.0",
     "react": "^18 || ^19",
     "react-dom": "^18 || ^19",
     "styled-components": "^5.2 || ^6"
