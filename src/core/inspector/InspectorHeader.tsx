@@ -21,6 +21,7 @@ export const InspectorHeader = memo(function InspectorHeader(props: {
 }) {
   const {currentTabId, onTabChange, tabs} = props
 
+  // @TODO move to vanilla-extract
   const layerStyle: CSSProperties = useMemo(() => ({flex: 'none', position: 'sticky', top: 0}), [])
 
   const children = useMemo(

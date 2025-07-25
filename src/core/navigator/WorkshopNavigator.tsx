@@ -110,8 +110,16 @@ const NavigatorView = memo(function NavigatorView(props: {
   return (
     <Root display={display} flex={1}>
       <Flex direction="column" height="fill">
-        <Layer style={flexNoneStyle}>
-          <Card padding={2} shadow={1} style={lineHeightNoneStyle}>
+        <Layer
+          // @TODO move to vanilla-extract
+          style={flexNoneStyle}
+        >
+          <Card
+            padding={2}
+            shadow={1}
+            // @TODO move to vanilla-extract
+            style={lineHeightNoneStyle}
+          >
             <TextInput
               border={false}
               clearButton={Boolean(query)}

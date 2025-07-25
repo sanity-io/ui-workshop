@@ -28,6 +28,7 @@ export const WorkshopCanvas = memo(function WorkshopCanvas(props: {
     buildFrameUrl({baseUrl: frameUrl, path, payload, scheme, viewport, zoom}),
   )
 
+  // @TODO move to vanilla-extract
   const containerStyle = useMemo(
     () => ({
       maxWidth: viewportW === 'auto' ? undefined : `${(viewportW || 1) * zoom}px`,

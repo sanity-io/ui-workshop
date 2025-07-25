@@ -14,7 +14,11 @@ export const BooleanProp = memo(function BooleanProp(props: {
 
   return (
     <Flex as="label" padding={3}>
-      <Box marginRight={2} style={{lineHeight: 0}}>
+      <Box
+        marginRight={2}
+        // @TODO move to vanilla-extract
+        style={{lineHeight: 0}}
+      >
         <Checkbox
           checked={value || false}
           onChange={(event) => setPropValue(schema.name, event.currentTarget.checked)}
