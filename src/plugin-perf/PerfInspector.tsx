@@ -26,7 +26,14 @@ export const PerfInspector = memo(function PerfInspector(): React.ReactNode {
         const testResults = results.filter((r) => r.name === detail.name)
 
         return (
-          <Card border key={detail.name} overflow="hidden" radius={2} style={{lineHeight: 0}}>
+          <Card
+            border
+            key={detail.name}
+            overflow="hidden"
+            radius={2}
+            // @TODO move to vanilla-extract
+            style={{lineHeight: 0}}
+          >
             <Flex>
               <Stack flex={1} padding={2} space={2}>
                 <Text size={1} weight="semibold">

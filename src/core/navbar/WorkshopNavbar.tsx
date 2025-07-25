@@ -21,7 +21,13 @@ export const WorkshopNavbar = memo(function WorkshopNavbar(props: {
   const {story, title} = useWorkshop()
 
   return (
-    <Card borderBottom flex="none" padding={2} style={{lineHeight: 0}}>
+    <Card
+      borderBottom
+      flex="none"
+      padding={2}
+      // @TODO move to vanilla-extract
+      style={{lineHeight: 0}}
+    >
       <Flex gap={1}>
         <Box display={['block', 'block', 'none']} flex="none">
           <Button
@@ -40,6 +46,7 @@ export const WorkshopNavbar = memo(function WorkshopNavbar(props: {
           justify={['center', 'center', 'flex-start']}
           padding={2}
           sizing="border"
+          // @TODO move to vanilla-extract
           style={{minWidth: 250}}
         >
           {mediaIndex < 2 && <Text weight="bold">{story?.title || title}</Text>}

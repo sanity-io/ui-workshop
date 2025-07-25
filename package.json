@@ -22,6 +22,9 @@
   "author": "Sanity.io <hello@sanity.io>",
   "sideEffects": false,
   "type": "module",
+  "imports": {
+    "#styles": "./src/core/styles.css.ts"
+  },
   "exports": {
     ".": {
       "source": "./exports/index.ts",

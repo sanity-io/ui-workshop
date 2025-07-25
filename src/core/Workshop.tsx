@@ -10,6 +10,8 @@ import {debounce} from 'lodash'
 import {isEqual} from 'lodash'
 import {memo, useCallback, useEffect, useMemo, useRef, useState} from 'react'
 
+import {forceMinWidth320} from '#styles'
+
 import {WorkshopConfig} from './config'
 import {DEFAULT_VIEWPORT_VALUE, DEFAULT_ZOOM_VALUE} from './constants'
 import {WorkshopInspector} from './inspector'
@@ -18,7 +20,6 @@ import {WorkshopLocationStore} from './location'
 import {WorkshopNavbar} from './navbar'
 import {WorkshopNavigator} from './navigator'
 import {WorkshopLocation, WorkshopMsg, WorkshopQuery, WorkshopState} from './types'
-import {boundary} from './Workshop.css'
 import {WorkshopCanvas} from './WorkshopCanvas'
 import {createWorkshopFrameController} from './WorkshopFrameController'
 import {WorkshopProvider} from './WorkshopProvider'
@@ -248,7 +249,7 @@ export const Workshop = memo(function Workshop(props: WorkshopProps): React.Reac
         <BoundaryElementProvider element={boundaryElement}>
           <PortalProvider element={portalElement}>
             <Flex
-              className={boundary}
+              className={forceMinWidth320}
               data-boundary=""
               direction="column"
               height="fill"

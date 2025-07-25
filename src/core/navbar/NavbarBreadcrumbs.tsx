@@ -43,7 +43,12 @@ const NavbarBreadcrumbsView = memo(function NavbarBreadcrumbsView(props: {
       space={2}
     >
       <Text size={[2, 2, 1]} weight="bold">
-        <a href="/" onClick={onHomeClick} style={{color: 'inherit'}}>
+        <a
+          href="/"
+          onClick={onHomeClick}
+          // @TODO move to vanilla-extract
+          style={{color: 'inherit'}}
+        >
           {title}
         </a>
       </Text>
