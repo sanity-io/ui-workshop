@@ -1,4 +1,5 @@
-import {BoxDisplay, Card, Container, Flex, Heading, Spinner, Stack, Text} from '@sanity/ui'
+import {Card, Container, Flex, Heading, Spinner, Stack, Text} from '@sanity/ui'
+import type {Display} from '@sanity/ui/css'
 import {memo, useMemo, useState} from 'react'
 import {styled} from 'styled-components'
 
@@ -37,7 +38,7 @@ export const WorkshopCanvas = memo(function WorkshopCanvas(props: {
     [viewportW, viewportH, zoom],
   )
 
-  const display: BoxDisplay = useMemo(() => (hidden ? 'none' : 'block'), [hidden])
+  const display = useMemo<Display>(() => (hidden ? 'none' : 'block'), [hidden])
 
   const frameStyle = useMemo(
     () => ({
@@ -54,7 +55,7 @@ export const WorkshopCanvas = memo(function WorkshopCanvas(props: {
       <Flex align="center" height="fill" justify="center" sizing="border">
         {path === '/' && (
           <Container width={0}>
-            <Stack padding={4} space={4}>
+            <Stack padding={4} gap={4}>
               <Heading align="center">{title}</Heading>
               <Text align="center" muted>
                 Browse workshop stories in the navigator to the left.

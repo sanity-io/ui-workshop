@@ -86,7 +86,5 @@ export const GlobalStyle = createGlobalStyle`
     src: url("https://studio-static.sanity.io/Inter-BlackItalic.woff2") format("woff2");
   }
 
-  body {
-    background-color: ${({theme}) => theme.sanity.color.base.bg};
-  }
+
 `

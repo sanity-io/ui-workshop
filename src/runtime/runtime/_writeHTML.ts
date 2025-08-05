@@ -17,15 +17,13 @@ const HTML = `<!DOCTYPE html>
         -webkit-font-smoothing: antialiased;
       }
       html,
-      body,
-      #root {
+      body {
         height: 100%;
         margin: 0;
       }
     </style>
   </head>
   <body>
-    <div id="root"></div>
     <script type="module" src="/.workshop/main.tsx"></script>
   </body>
 </html>

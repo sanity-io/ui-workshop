@@ -17,15 +17,13 @@ const HTML = `<!DOCTYPE html>
         -webkit-font-smoothing: antialiased;
       }
       html,
-      body,
-      #root {
+      body {
         height: 100%;
         margin: 0;
       }
     </style>
   </head>
   <body>
-    <div id="root"></div>
     <script>
       if (window.parent !== window) {
         window.__REACT_DEVTOOLS_GLOBAL_HOOK__ = window.parent.__REACT_DEVTOOLS_GLOBAL_HOOK__

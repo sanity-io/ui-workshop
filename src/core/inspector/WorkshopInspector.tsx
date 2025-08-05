@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import {Box, BoxDisplay, Card, Flex, TabPanel} from '@sanity/ui'
+import {Box, Card, Flex, TabPanel} from '@sanity/ui'
+import type {Display, ResponsiveProp} from '@sanity/ui/css'
 import {ElementType, memo, useState} from 'react'
 import {styled} from 'styled-components'
 
@@ -9,13 +10,9 @@ import {InspectorHeader} from './InspectorHeader'
 import {InspectorTab} from './types'
 
 const Root = styled(Card)`
-  overflow: hidden;
-
-  @media screen and (min-width: ${({theme}) => theme.sanity.media[1]}px) {
-    border-left: 1px solid var(--card-border-color);
+  @media screen and (min-width: 600px) {
     min-width: 180px;
     max-width: 300px;
-    overflow: auto;
   }
 `
 
@@ -46,10 +43,10 @@ export const WorkshopInspector = memo(function WorkshopInspector(props: {
   const currentTab = tabs.find((tab) => tab.id === tabId)
   const showTabs = tabs.length > 1
 
-  const display: BoxDisplay[] = expanded ? ['block'] : ['none', 'none', 'block']
+  const display: ResponsiveProp<Display> = expanded ? ['block'] : ['none', 'none', 'block']
 
   return (
-    <Root display={display} flex={1}>
+    <Root display={display} flex={1} overflow={['hidden', 'hidden', 'auto']} shadow={1}>
       <Flex direction="column" height="fill">
         {showTabs && <InspectorHeader currentTabId={tabId} onTabChange={setTabId} tabs={tabs} />}
 
