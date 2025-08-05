@@ -20,7 +20,6 @@
   },
   "license": "MIT",
   "author": "Sanity.io <hello@sanity.io>",
-  "sideEffects": false,
   "type": "module",
   "exports": {
     ".": {
