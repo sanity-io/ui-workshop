@@ -5,6 +5,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.1.3-static.1](https://github.com/sanity-io/ui-workshop/compare/v3.1.2...v3.1.3-static.1) (2025-08-05)
+
+### Bug Fixes
+
+- mark side-effects ([42d30d4](https://github.com/sanity-io/ui-workshop/commit/42d30d46ac57d6735ee2bf501073404a7cb77299))
+- test ui without styled-components ([aa86363](https://github.com/sanity-io/ui-workshop/commit/aa86363f33459c682a96ea47e9a484ea27430b40))
+
 ## [3.1.2](https://github.com/sanity-io/ui-workshop/compare/v3.1.1...v3.1.2) (2025-07-25)
 
 ### Bug Fixes
