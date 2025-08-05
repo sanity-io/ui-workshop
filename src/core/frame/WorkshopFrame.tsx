@@ -1,10 +1,4 @@
-import {
-  BoundaryElementProvider,
-  Card,
-  PortalProvider,
-  ThemeColorSchemeKey,
-  ToastProvider,
-} from '@sanity/ui'
+import type {ColorScheme} from '@sanity/ui/theme'
 import {memo, useCallback, useEffect, useMemo, useState} from 'react'
 
 import {WorkshopConfig} from '../config'
@@ -19,7 +13,7 @@ import {createMainController} from './WorkshopMainController'
 /** @internal */
 export interface WorkshopFrameProps {
   config: WorkshopConfig
-  setScheme: (nextScheme: ThemeColorSchemeKey) => void
+  setScheme: (nextScheme: ColorScheme) => void
 }
 
 function getStateFromLocation(): WorkshopState {
@@ -30,7 +24,7 @@ function getStateFromLocation(): WorkshopState {
     frameReady: false,
     path,
     payload,
-    scheme: typeof scheme === 'string' ? (scheme as ThemeColorSchemeKey) : 'light',
+    scheme: typeof scheme === 'string' ? (scheme as ColorScheme) : 'light',
     viewport: typeof viewport === 'string' ? viewport : 'auto',
     zoom: typeof zoom === 'string' ? Number(zoom) : 1,
   }
@@ -43,8 +37,6 @@ export const WorkshopFrame = memo(function WorkshopFrame(
   const {config, setScheme} = props
   const main = useMemo(() => createMainController(), [])
   const channel = useMemo(() => createPubsub<WorkshopMsg>(), [])
-  const [boundaryElement, setBoundaryElement] = useState<HTMLDivElement | null>(null)
-  const [portalElement, setPortalElement] = useState<HTMLDivElement | null>(null)
 
   // Publish messages to both frame+main
   const broadcast = useCallback(
@@ -75,28 +67,19 @@ export const WorkshopFrame = memo(function WorkshopFrame(
   useEffect(() => broadcast({type: 'workshop/frameReady'}), [broadcast])
 
   return (
-    <ToastProvider>
-      <BoundaryElementProvider element={boundaryElement}>
-        <PortalProvider element={portalElement}>
-          <WorkshopProvider
-            broadcast={broadcast}
-            config={config}
-            channel={channel}
-            frameReady={frameReady}
-            origin="frame"
-            path={path}
-            payload={payload}
-            scheme={scheme}
-            viewport={viewport}
-            zoom={zoom}
-          >
-            <Card height="fill" ref={setBoundaryElement}>
-              <WorkshopCanvas />
-              <div data-portal="" ref={setPortalElement} />
-            </Card>
-          </WorkshopProvider>
-        </PortalProvider>
-      </BoundaryElementProvider>
-    </ToastProvider>
+    <WorkshopProvider
+      broadcast={broadcast}
+      config={config}
+      channel={channel}
+      frameReady={frameReady}
+      origin="frame"
+      path={path}
+      payload={payload}
+      scheme={scheme}
+      viewport={viewport}
+      zoom={zoom}
+    >
+      <WorkshopCanvas />
+    </WorkshopProvider>
   )
 })

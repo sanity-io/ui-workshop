@@ -1,5 +1,7 @@
 import {SearchIcon} from '@sanity/icons'
-import {Box, BoxDisplay, Card, Flex, Layer, TextInput} from '@sanity/ui'
+import {Box, Card, Flex, Layer, TextInput} from '@sanity/ui'
+import type {Display, ResponsiveProp} from '@sanity/ui/css'
+import {FontTextSize} from '@sanity/ui/theme'
 import {memo, useCallback, useMemo, useState} from 'react'
 import {styled} from 'styled-components'
 
@@ -12,19 +14,15 @@ import {StoryTree} from './StoryTree'
 import {MenuCollection, MenuList, MenuScope} from './types'
 
 const Root = styled(Card)`
-  overflow: hidden;
-
-  @media screen and (min-width: ${({theme}) => theme.sanity.media[1]}px) {
-    border-right: 1px solid var(--card-border-color);
+  @media screen and (min-width: 600px) {
     min-width: 180px;
     max-width: 300px;
-    overflow: auto;
   }
 `
 
 const flexNoneStyle: React.CSSProperties = {flex: 'none'}
 const lineHeightNoneStyle: React.CSSProperties = {lineHeight: 0}
-const textInputFontSize = [2, 2, 1]
+const textInputFontSize: ResponsiveProp<FontTextSize> = [2, 2, 1]
 
 /** @internal */
 export const WorkshopNavigator = memo(function WorkshopNavigator(props: {
@@ -62,7 +60,7 @@ export const WorkshopNavigator = memo(function WorkshopNavigator(props: {
   const handleSearchQueryClear = useCallback(() => setQuery(''), [])
 
   const handleStoryClick = useCallback(
-    (event: React.MouseEvent<HTMLDivElement>) => {
+    (event: React.MouseEvent<HTMLAnchorElement>) => {
       event.preventDefault()
 
       const target = event.currentTarget
@@ -96,19 +94,19 @@ const NavigatorView = memo(function NavigatorView(props: {
   menu: MenuScope | MenuList
   onSearchQueryChange: (event: React.ChangeEvent<HTMLInputElement>) => void
   onSearchQueryClear: () => void
-  onStoryClick: (event: React.MouseEvent<HTMLDivElement>) => void
+  onStoryClick: (event: React.MouseEvent<HTMLAnchorElement>) => void
   query: string
 }) {
   const {expanded, matches, menu, onSearchQueryChange, onSearchQueryClear, onStoryClick, query} =
     props
 
-  const display: BoxDisplay[] = useMemo(
+  const display = useMemo<ResponsiveProp<Display>>(
     () => (expanded ? ['block'] : ['none', 'none', 'block']),
     [expanded],
   )
 
   return (
-    <Root display={display} flex={1}>
+    <Root display={display} flex={1} overflow={['hidden', 'hidden', 'auto']} shadow={1}>
       <Flex direction="column" height="fill">
         <Layer style={flexNoneStyle}>
           <Card padding={2} shadow={1} style={lineHeightNoneStyle}>
@@ -122,7 +120,7 @@ const NavigatorView = memo(function NavigatorView(props: {
               padding={2}
               placeholder="Stories"
               radius={2}
-              space={2}
+              gap={2}
               value={query}
             />
           </Card>

@@ -9,7 +9,6 @@ import config from '../workshop.config'
 
 mount({
   config: {...config, scopes},
-  element: document.getElementById('root'),
 })
 `
 
