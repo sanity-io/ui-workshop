@@ -1,5 +1,5 @@
 import {Box, Button, Card, Code, ErrorBoundary, Flex, Heading, Spinner, Stack} from '@sanity/ui'
-import {createElement, memo, Suspense, useCallback, useState} from 'react'
+import {memo, Suspense, useCallback, useState} from 'react'
 
 import {WorkshopStory} from '../config'
 import {useWorkshop} from '../useWorkshop'
@@ -35,14 +35,17 @@ export const WorkshopCanvas = memo(function WorkshopCanvas(): React.ReactNode {
       </Card>
     )
   }
+  const Story = story.component
 
   return (
     <>
       <h1 hidden>{story.title}</h1>
 
       <Suspense fallback={<LoadingScreen story={story} />}>
-        <Card as="main" height="fill">
-          <ErrorBoundary onCatch={catchError}>{createElement(story.component)}</ErrorBoundary>
+        <Card as="main" height="fill" overflow="auto">
+          <ErrorBoundary onCatch={catchError}>
+            <Story />
+          </ErrorBoundary>
         </Card>
       </Suspense>
     </>
@@ -74,7 +77,7 @@ const ErrorScreen = memo(function ErrorScreen(props: {
 
   return (
     <Box padding={4}>
-      <Stack space={4}>
+      <Stack gap={4}>
         <Heading as="h1" size={[1, 1, 2]}>
           {error.message}
         </Heading>
