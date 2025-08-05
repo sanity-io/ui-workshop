@@ -43,7 +43,12 @@ export async function build(options: {cwd: string}): Promise<void> {
 
   await writeFile(path.resolve(runtimeDir, 'scopes.ts'), code)
 
-  const baseViteConfig = createViteConfig({cwd, outDir, runtimeDir})
+  const baseViteConfig = createViteConfig({
+    cwd,
+    outDir,
+    runtimeDir,
+    vanillaExtract: runtime?.vanillaExtract,
+  })
 
   let viteConfig = runtime?.vite?.(baseViteConfig) || baseViteConfig
 
