@@ -1,14 +1,10 @@
-import {
-  BoundaryElementProvider,
-  Flex,
-  PortalProvider,
-  ThemeColorSchemeKey,
-  ToastProvider,
-  useMediaIndex,
-} from '@sanity/ui'
+import {Flex, useMediaIndex} from '@sanity/ui'
+import type {ColorScheme} from '@sanity/ui/theme'
 import {debounce} from 'lodash'
 import {isEqual} from 'lodash'
 import {memo, useCallback, useEffect, useMemo, useRef, useState} from 'react'
+
+import {forceMinWidth320} from '#styles'
 
 import {WorkshopConfig} from './config'
 import {DEFAULT_VIEWPORT_VALUE, DEFAULT_ZOOM_VALUE} from './constants'
@@ -27,13 +23,13 @@ import {workshopReducer} from './workshopReducer'
 export interface WorkshopProps {
   config: WorkshopConfig
   locationStore: WorkshopLocationStore
-  onSchemeChange: (nextScheme: ThemeColorSchemeKey) => void
-  scheme?: ThemeColorSchemeKey
+  onSchemeChange: (nextScheme: ColorScheme) => void
+  scheme?: ColorScheme
 }
 
 function getStateFromLocation(
   loc: Omit<WorkshopLocation, 'type'>,
-  schemeProp?: ThemeColorSchemeKey,
+  schemeProp?: ColorScheme,
   frameReady?: boolean,
 ): WorkshopState {
   const path = loc.path
@@ -44,7 +40,7 @@ function getStateFromLocation(
     frameReady: frameReady || false,
     path,
     payload,
-    scheme: schemeProp || (typeof scheme === 'string' ? (scheme as ThemeColorSchemeKey) : 'light'),
+    scheme: schemeProp || (typeof scheme === 'string' ? (scheme as ColorScheme) : 'light'),
     viewport: typeof viewport === 'string' ? viewport : 'auto',
     zoom: typeof zoom === 'number' ? zoom : 1,
   }
@@ -86,8 +82,6 @@ export const Workshop = memo(function Workshop(props: WorkshopProps): React.Reac
   const withNavbar = config.features?.navbar ?? true
   const channel = useMemo(() => createPubsub<WorkshopMsg>(), [])
   const frame = useMemo(() => createWorkshopFrameController(), [])
-  const [boundaryElement, setBoundaryElement] = useState<HTMLDivElement | null>(null)
-  const [portalElement, setPortalElement] = useState<HTMLDivElement | null>(null)
   const [{frameReady, path, payload, scheme, viewport, zoom}, setState] = useState<WorkshopState>(
     () => getStateFromLocation(locationStore.get(), schemeProp),
   )
@@ -243,39 +237,25 @@ export const Workshop = memo(function Workshop(props: WorkshopProps): React.Reac
       viewport={viewport}
       zoom={zoom}
     >
-      <ToastProvider>
-        <BoundaryElementProvider element={boundaryElement}>
-          <PortalProvider element={portalElement}>
-            <Flex
-              data-boundary=""
-              direction="column"
-              height="fill"
-              ref={setBoundaryElement}
-              style={{minWidth: 320}}
-            >
-              {withNavbar && (
-                <WorkshopNavbar
-                  inspectorExpanded={inspectorExpanded}
-                  navigatorExpanded={navigatorExpanded}
-                  onInspectorToggle={handleInspectorToggle}
-                  onNavigatorToggle={handleNavigatorToggle}
-                />
-              )}
+      <Flex className={forceMinWidth320} direction="column" height="fill">
+        {withNavbar && (
+          <WorkshopNavbar
+            inspectorExpanded={inspectorExpanded}
+            navigatorExpanded={navigatorExpanded}
+            onInspectorToggle={handleInspectorToggle}
+            onNavigatorToggle={handleNavigatorToggle}
+          />
+        )}
 
-              <Flex flex={1}>
-                <WorkshopNavigator collections={config.collections} expanded={navigatorExpanded} />
-                <WorkshopCanvas
-                  frameRef={frame.setElement}
-                  hidden={navigatorExpanded || inspectorExpanded}
-                />
-                <WorkshopInspector expanded={inspectorExpanded} />
-              </Flex>
-
-              <div data-portal="" ref={setPortalElement} />
-            </Flex>
-          </PortalProvider>
-        </BoundaryElementProvider>
-      </ToastProvider>
+        <Flex flex={1}>
+          <WorkshopNavigator collections={config.collections} expanded={navigatorExpanded} />
+          <WorkshopCanvas
+            frameRef={frame.setElement}
+            hidden={navigatorExpanded || inspectorExpanded}
+          />
+          <WorkshopInspector expanded={inspectorExpanded} />
+        </Flex>
+      </Flex>
     </WorkshopProvider>
   )
 })
