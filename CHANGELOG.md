@@ -5,6 +5,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.1.3-static.2](https://github.com/sanity-io/ui-workshop/compare/v3.1.3-static.1...v3.1.3-static.2) (2025-08-06)
+
+### Bug Fixes
+
+- bring back borders ([b43891a](https://github.com/sanity-io/ui-workshop/commit/b43891a7d7418df57fc37b854af91e877c02ff59))
+- remove useless shadow ([fe91d41](https://github.com/sanity-io/ui-workshop/commit/fe91d417e4a3feb470f5bc3a0ab6da4a474bdf41))
+
 ## [3.1.3-static.1](https://github.com/sanity-io/ui-workshop/compare/v3.1.2...v3.1.3-static.1) (2025-08-05)
 
 ### Bug Fixes
