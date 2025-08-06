@@ -16,6 +16,7 @@ export default defineConfig({
   tsconfig: 'tsconfig.dist.json',
   babel: {reactCompiler: true, styledComponents: true},
   reactCompilerOptions: {target: '19'},
+  rollup: {vanillaExtract: true},
   dts: 'rolldown',
   strictOptions: {noImplicitSideEffects: 'off'},
 })

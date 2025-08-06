@@ -7,7 +7,6 @@ import {createRoot} from 'react-dom/client'
 
 import {WorkshopConfig} from './config'
 import {WorkshopFrame} from './frame'
-import {GlobalStyle} from './GlobalStyle'
 
 /** @beta */
 export function mountFrame(options: {config: WorkshopConfig}): void {
@@ -29,7 +28,6 @@ function App(props: {config: WorkshopConfig}) {
 
   return (
     <Root scheme={scheme}>
-      <GlobalStyle />
       <WorkshopFrame config={config} setScheme={setScheme} />
     </Root>
   )

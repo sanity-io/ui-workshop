@@ -1,11 +1,11 @@
-import {useWorkshop} from '@sanity/ui-workshop'
 import {memo, useCallback, useEffect, useMemo, useState} from 'react'
 
+import {useWorkshop} from '../core/useWorkshop'
 import {_runTest} from './_runTest'
-import {PerfMsg} from './msg'
-import {PerfContext, PerfContextValue} from './PerfContext'
+import type {PerfMsg} from './msg'
+import {PerfContext, type PerfContextValue} from './PerfContext'
 import {perfReducer} from './perfReducer'
-import {PerfState, PerfTest, PerfTestRenderResult} from './types'
+import type {PerfState, PerfTest, PerfTestRenderResult} from './types'
 
 /** @internal */
 export const PerfProvider = memo(function PerfProvider(props: {

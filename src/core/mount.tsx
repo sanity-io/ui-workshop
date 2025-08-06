@@ -6,7 +6,6 @@ import {StrictMode, useEffect, useState} from 'react'
 import {createRoot} from 'react-dom/client'
 
 import {WorkshopConfig} from './config'
-import {GlobalStyle} from './GlobalStyle'
 import {createLocationStore} from './location'
 import {Workshop} from './Workshop'
 
@@ -35,7 +34,6 @@ function App(props: {config: WorkshopConfig}) {
 
   return (
     <Root scheme={scheme}>
-      <GlobalStyle />
       <Workshop
         config={config}
         locationStore={locationStore}

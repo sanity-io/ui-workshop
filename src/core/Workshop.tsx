@@ -4,6 +4,8 @@ import {debounce} from 'lodash'
 import {isEqual} from 'lodash'
 import {memo, useCallback, useEffect, useMemo, useRef, useState} from 'react'
 
+import {forceMinWidth320} from '#styles'
+
 import {WorkshopConfig} from './config'
 import {DEFAULT_VIEWPORT_VALUE, DEFAULT_ZOOM_VALUE} from './constants'
 import {WorkshopInspector} from './inspector'
@@ -235,7 +237,7 @@ export const Workshop = memo(function Workshop(props: WorkshopProps): React.Reac
       viewport={viewport}
       zoom={zoom}
     >
-      <Flex data-boundary="" direction="column" height="fill" style={{minWidth: 320}}>
+      <Flex className={forceMinWidth320} direction="column" height="fill">
         {withNavbar && (
           <WorkshopNavbar
             inspectorExpanded={inspectorExpanded}
