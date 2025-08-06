@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.0-static.2](https://github.com/sanity-io/ui-workshop/compare/v3.2.0-static.1...v3.2.0-static.2) (2025-08-06)
+
+### Bug Fixes
+
+- replace inline styles ([271f5f3](https://github.com/sanity-io/ui-workshop/commit/271f5f30837365d8f4b623bb07835e31046d590e))
+
 ## [3.2.0-static.1](https://github.com/sanity-io/ui-workshop/compare/v3.1.2...v3.2.0-static.1) (2025-08-06)
 
 ### Features
