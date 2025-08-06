@@ -107,7 +107,7 @@ const NavigatorView = memo(function NavigatorView(props: {
   )
 
   return (
-    <Root display={display} flex={1} overflow={['hidden', 'hidden', 'auto']} shadow={1}>
+    <Root display={display} flex={1} overflow={['hidden', 'hidden', 'auto']}>
       <Flex direction="column" height="fill">
         <Layer style={flexNoneStyle}>
           <Card padding={2} shadow={1} style={lineHeightNoneStyle}>
