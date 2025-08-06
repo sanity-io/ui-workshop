@@ -16,7 +16,17 @@ export default defineConfig({
   tsconfig: 'tsconfig.dist.json',
   babel: {reactCompiler: true, styledComponents: true},
   reactCompilerOptions: {target: '19'},
-  rollup: {vanillaExtract: true},
+  rollup: {
+    output: {
+      intro: (chunkInfo) => {
+        if (chunkInfo.isEntry === true && chunkInfo.name === 'index') {
+          return `import './bundle.css'`
+        }
+        return ''
+      },
+    },
+    vanillaExtract: true,
+  },
   dts: 'rolldown',
   strictOptions: {noImplicitSideEffects: 'off'},
 })
