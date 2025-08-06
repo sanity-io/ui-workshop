@@ -1,64 +1,6 @@
-import {
-  createVar,
-  createViewTransition,
-  globalFontFace,
-  globalStyle,
-  style,
-} from '@vanilla-extract/css'
+import {vars} from '@sanity/ui/css'
+import {createVar, createViewTransition, globalStyle, style} from '@vanilla-extract/css'
 import {calc} from '@vanilla-extract/css-utils'
-
-const fontDisplay: FontDisplay = 'swap'
-
-globalFontFace('Inter', [
-  {
-    src: `url('https://studio-static.sanity.io/Inter-Regular.woff2') format('woff2')`,
-    fontDisplay,
-    fontStyle: 'normal',
-    fontWeight: '400',
-  },
-  {
-    src: `url('https://studio-static.sanity.io/Inter-Italic.woff2') format('woff2')`,
-    fontDisplay,
-    fontStyle: 'italic',
-    fontWeight: '400',
-  },
-  {
-    src: `url('https://studio-static.sanity.io/Inter-Medium.woff2') format('woff2')`,
-    fontDisplay,
-    fontStyle: 'normal',
-    fontWeight: '500',
-  },
-  {
-    src: `url('https://studio-static.sanity.io/Inter-MediumItalic.woff2') format('woff2')`,
-    fontDisplay,
-    fontStyle: 'italic',
-    fontWeight: '500',
-  },
-  {
-    src: `url('https://studio-static.sanity.io/Inter-SemiBold.woff2') format('woff2')`,
-    fontDisplay,
-    fontStyle: 'normal',
-    fontWeight: '600',
-  },
-  {
-    src: `url('https://studio-static.sanity.io/Inter-SemiBoldItalic.woff2') format('woff2')`,
-    fontDisplay,
-    fontStyle: 'italic',
-    fontWeight: '600',
-  },
-  {
-    src: `url('https://studio-static.sanity.io/Inter-Bold.woff2') format('woff2')`,
-    fontDisplay,
-    fontStyle: 'normal',
-    fontWeight: '700',
-  },
-  {
-    src: `url('https://studio-static.sanity.io/Inter-BoldItalic.woff2') format('woff2')`,
-    fontDisplay,
-    fontStyle: 'italic',
-    fontWeight: '700',
-  },
-])
 
 globalStyle('html', {
   WebkitTextSizeAdjust: '100%',
@@ -67,21 +9,14 @@ globalStyle('html', {
   WebkitFontSmoothing: 'antialiased',
 })
 
-globalStyle('html, body, #root', {
+globalStyle('html, body', {
   height: '100%',
   margin: 0,
 })
 
-export const bodyBackgroundColor = createVar(
-  {
-    syntax: '<color>',
-    inherits: false,
-    initialValue: '#fff',
-  },
-  'body-background-color',
-)
 globalStyle('body', {
-  backgroundColor: bodyBackgroundColor,
+  backgroundColor: vars.color.bg,
+  overflow: 'hidden',
 })
 
 export const canvasViewTransition = createViewTransition('canvas')
@@ -107,7 +42,7 @@ export const viewportMaxWidth = createVar('viewport-max-width')
 export const viewportMaxHeight = createVar('viewport-max-height')
 export const iframeContainer = style({
   selectors: {
-    '&&&': {
+    '&&': {
       maxWidth: calc.multiply(viewportMaxWidth, zoom),
       maxHeight: calc.multiply(viewportMaxHeight, zoom),
     },
@@ -115,11 +50,9 @@ export const iframeContainer = style({
 })
 
 const workshopAside = style({
-  'overflow': 'hidden',
   '@media': {
     'screen and (min-width: 600px)': {
       maxWidth: '300px',
-      overflow: 'auto',
       selectors: {
         '&&': {
           minWidth: '180px',
@@ -134,7 +67,7 @@ export const workshopInspector = style([
   {
     '@media': {
       'screen and (min-width: 600px)': {
-        borderLeft: `1px solid var(--card-border-color)`,
+        borderLeft: `1px solid ${vars.color.border}`,
       },
     },
   },
@@ -145,20 +78,14 @@ export const workshopNavigator = style([
   {
     '@media': {
       'screen and (min-width: 600px)': {
-        borderRight: `1px solid var(--card-border-color)`,
+        borderRight: `1px solid ${vars.color.border}`,
       },
     },
   },
 ])
 
 export const inspectorHeader = style({
-  selectors: {
-    '&&': {
-      flex: 'none',
-      position: 'sticky',
-      top: 0,
-    },
-  },
+  top: 0,
 })
 
 export const inspectorHeaderCard = style({
@@ -169,3 +96,42 @@ export const inspectorHeaderCard = style({
     },
   },
 })
+
+export const workshopLayout = style({
+  selectors: {
+    '&&': {
+      minWidth: '320px',
+    },
+  },
+})
+
+export const navbarBreadcrumbsContainer = style({
+  selectors: {
+    '&&': {
+      minWidth: '250px',
+    },
+  },
+})
+export const navbarBreadcrumbsLink = style({
+  selectors: {
+    '&&': {
+      color: 'inherit',
+    },
+  },
+})
+
+const force0LineHeight = style({
+  selectors: {
+    '&&': {
+      lineHeight: '0',
+    },
+  },
+})
+
+export const navbarCard = style([force0LineHeight])
+
+export const navigatorSearchCard = style([force0LineHeight])
+
+export const booleanPropBox = style([force0LineHeight])
+
+export const perfInspectorCard = style([force0LineHeight])

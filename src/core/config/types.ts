@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import {RootTheme} from '@sanity/ui'
 import {ElementType, ReactNode} from 'react'
 
 /** @public */
@@ -32,7 +31,6 @@ export interface WorkshopConfig {
   frameUrl?: string
   plugins?: WorkshopPlugin<any>[]
   scopes: WorkshopScope[]
-  theme?: RootTheme
   title?: string
 }
 

@@ -11,7 +11,6 @@ const HTML = `<!DOCTYPE html>
     />
   </head>
   <body>
-    <div id="root"></div>
     <script>
       if (window.parent !== window) {
         window.__REACT_DEVTOOLS_GLOBAL_HOOK__ = window.parent.__REACT_DEVTOOLS_GLOBAL_HOOK__

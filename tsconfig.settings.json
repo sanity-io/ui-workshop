@@ -3,6 +3,7 @@
   "compilerOptions": {
     "rootDir": ".",
     "outDir": "./dist",
+    "types": ["vite/client"],
 
     "verbatimModuleSyntax": false,
     "noPropertyAccessFromIndexSignature": false,

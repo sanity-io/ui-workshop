@@ -13,9 +13,9 @@ export const InspectorHeader = memo(function InspectorHeader(props: {
   const {currentTabId, onTabChange, tabs} = props
 
   return (
-    <Layer className={inspectorHeader}>
+    <Layer className={inspectorHeader} flex="none" position="sticky">
       <Card className={inspectorHeaderCard} padding={2} shadow={1}>
-        <TabList space={1}>
+        <TabList gap={1}>
           {tabs.map((tab) => (
             <InspectorTabView
               key={tab.id}
