@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0-static.5](https://github.com/sanity-io/ui-workshop/compare/v4.0.0-static.4...v4.0.0-static.5) (2025-08-06)
+
+### Bug Fixes
+
+- provide fallback colors ([0c47af3](https://github.com/sanity-io/ui-workshop/commit/0c47af39e82c983a9fdebf6de13a6b5a788627fd))
+
 ## [4.0.0-static.4](https://github.com/sanity-io/ui-workshop/compare/v4.0.0-static.3...v4.0.0-static.4) (2025-08-06)
 
 ### Bug Fixes
