@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0-static.4](https://github.com/sanity-io/ui-workshop/compare/v4.0.0-static.3...v4.0.0-static.4) (2025-08-06)
+
+### Bug Fixes
+
+- add back meta tags ([cfbf5bb](https://github.com/sanity-io/ui-workshop/commit/cfbf5bb61124ce6286fd04a300a178d5cdc3af6c))
+
 ## [4.0.0-static.3](https://github.com/sanity-io/ui-workshop/compare/v4.0.0-static.2...v4.0.0-static.3) (2025-08-06)
 
 ### Bug Fixes
