@@ -23,7 +23,7 @@ globalStyle('html, body', {
 globalStyle('body', {
   // Since `@sanity/ui-workshop` is used by `@sanity/ui` we need to fallback to a stable var that exists in dev
   backgroundColor: fallbackVar(vars.color.bg, 'var(--card-bg-color)'),
-  overflow: 'hidden',
+  overflow: 'auto',
 })
 
 export const canvasViewTransition = createViewTransition('canvas')
