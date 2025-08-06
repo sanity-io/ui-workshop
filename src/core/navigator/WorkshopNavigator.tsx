@@ -4,7 +4,7 @@ import type {Display, ResponsiveProp} from '@sanity/ui/css'
 import {FontTextSize} from '@sanity/ui/theme'
 import {memo, useCallback, useMemo, useState} from 'react'
 
-import {workshopNavigator} from '#styles'
+import {force0LineHeight, workshopNavigator} from '#styles'
 
 import {WorkshopScope, WorkshopStory} from '../config'
 import {EMPTY_ARRAY} from '../constants'
@@ -14,8 +14,6 @@ import {SearchResults} from './SearchResults'
 import {StoryTree} from './StoryTree'
 import {MenuCollection, MenuList, MenuScope} from './types'
 
-const flexNoneStyle: React.CSSProperties = {flex: 'none'}
-const lineHeightNoneStyle: React.CSSProperties = {lineHeight: 0}
 const textInputFontSize: ResponsiveProp<FontTextSize> = [2, 2, 1]
 
 /** @internal */
@@ -107,8 +105,8 @@ const NavigatorView = memo(function NavigatorView(props: {
       overflow={['hidden', 'hidden', 'auto']}
     >
       <Flex direction="column" height="fill">
-        <Layer style={flexNoneStyle}>
-          <Card padding={2} shadow={1} style={lineHeightNoneStyle}>
+        <Layer flex="none">
+          <Card className={force0LineHeight} padding={2} shadow={1}>
             <TextInput
               border={false}
               clearButton={Boolean(query)}

@@ -1,6 +1,8 @@
 import {Breadcrumbs, Text} from '@sanity/ui'
 import {memo, useCallback} from 'react'
 
+import {forceColorInherit} from '#styles'
+
 import {useWorkshop} from '../useWorkshop'
 
 /** @internal */
@@ -43,7 +45,7 @@ const NavbarBreadcrumbsView = memo(function NavbarBreadcrumbsView(props: {
       gap={2}
     >
       <Text size={[2, 2, 1]} weight="bold">
-        <a href="/" onClick={onHomeClick} style={{color: 'inherit'}}>
+        <a className={forceColorInherit} href="/" onClick={onHomeClick}>
           {title}
         </a>
       </Text>

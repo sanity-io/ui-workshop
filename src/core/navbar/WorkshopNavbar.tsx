@@ -2,6 +2,8 @@ import {ControlsIcon, MenuIcon} from '@sanity/icons'
 import {Box, Button, Card, Flex, Inline, Text, useMediaIndex} from '@sanity/ui'
 import {memo} from 'react'
 
+import {force0LineHeight, forceMinWidth250} from '#styles'
+
 import {useWorkshop} from '../useWorkshop'
 import {NavbarBreadcrumbs} from './NavbarBreadcrumbs'
 import {OpenCanvasButton} from './OpenCanvasButton'
@@ -21,7 +23,7 @@ export const WorkshopNavbar = memo(function WorkshopNavbar(props: {
   const {story, title} = useWorkshop()
 
   return (
-    <Card borderBottom flex="none" padding={2} style={{lineHeight: 0}}>
+    <Card className={force0LineHeight} borderBottom flex="none" padding={2}>
       <Flex gap={1}>
         <Box display={['block', 'block', 'none']} flex="none">
           <Button
@@ -36,11 +38,11 @@ export const WorkshopNavbar = memo(function WorkshopNavbar(props: {
         </Box>
 
         <Flex
+          className={forceMinWidth250}
           flex={1}
           justify={['center', 'center', 'flex-start']}
           padding={2}
           sizing="border"
-          style={{minWidth: 250}}
         >
           {mediaIndex < 2 && <Text weight="bold">{story?.title || title}</Text>}
           {mediaIndex >= 2 && <NavbarBreadcrumbs />}
