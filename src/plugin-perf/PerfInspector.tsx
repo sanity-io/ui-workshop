@@ -2,7 +2,7 @@ import {PlayIcon, TrashIcon} from '@sanity/icons'
 import {Box, Button, Card, Flex, Stack, Text} from '@sanity/ui'
 import {memo} from 'react'
 
-import {force0LineHeight} from '#styles'
+import {perfInspectorCard} from '#styles'
 
 import {usePerf} from './hooks'
 
@@ -28,7 +28,7 @@ export const PerfInspector = memo(function PerfInspector(): React.ReactNode {
         const testResults = results.filter((r) => r.name === detail.name)
 
         return (
-          <Card className={force0LineHeight} border key={detail.name} overflow="hidden" radius={2}>
+          <Card key={detail.name} className={perfInspectorCard} border overflow="hidden" radius={2}>
             <Flex>
               <Stack flex={1} padding={2} gap={2}>
                 <Text size={1} weight="semibold">

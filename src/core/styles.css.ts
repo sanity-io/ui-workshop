@@ -19,19 +19,6 @@ globalStyle('body', {
   overflow: 'hidden',
 })
 
-export const forceMinWidth250 = style({
-  minWidth: '250px !important',
-})
-export const forceMinWidth320 = style({
-  minWidth: '320px !important',
-})
-export const force0LineHeight = style({
-  lineHeight: '0 !important',
-})
-export const forceColorInherit = style({
-  color: 'inherit !important',
-})
-
 export const canvasViewTransition = createViewTransition('canvas')
 export const zoom = createVar(
   {
@@ -109,3 +96,42 @@ export const inspectorHeaderCard = style({
     },
   },
 })
+
+export const workshopLayout = style({
+  selectors: {
+    '&&': {
+      minWidth: '320px',
+    },
+  },
+})
+
+export const navbarBreadcrumbsContainer = style({
+  selectors: {
+    '&&': {
+      minWidth: '250px',
+    },
+  },
+})
+export const navbarBreadcrumbsLink = style({
+  selectors: {
+    '&&': {
+      color: 'inherit',
+    },
+  },
+})
+
+const force0LineHeight = style({
+  selectors: {
+    '&&': {
+      lineHeight: '0',
+    },
+  },
+})
+
+export const navbarCard = style([force0LineHeight])
+
+export const navigatorSearchCard = style([force0LineHeight])
+
+export const booleanPropBox = style([force0LineHeight])
+
+export const perfInspectorCard = style([force0LineHeight])

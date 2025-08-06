@@ -37,12 +37,10 @@ export const WorkshopInspector = memo(function WorkshopInspector(props: {
   const currentTab = tabs.find((tab) => tab.id === tabId)
   const showTabs = tabs.length > 1
 
-  const display: ResponsiveProp<Display> = expanded ? ['block'] : ['none', 'none', 'block']
-
   return (
     <Card
       className={workshopInspector}
-      display={display}
+      display={expanded ? ['block'] : ['none', 'none', 'block']}
       flex={1}
       overflow={['hidden', 'hidden', 'auto']}
     >

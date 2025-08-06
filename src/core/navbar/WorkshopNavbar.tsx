@@ -2,7 +2,7 @@ import {ControlsIcon, MenuIcon} from '@sanity/icons'
 import {Box, Button, Card, Flex, Inline, Text, useMediaIndex} from '@sanity/ui'
 import {memo} from 'react'
 
-import {force0LineHeight, forceMinWidth250} from '#styles'
+import {navbarBreadcrumbsContainer, navbarCard} from '#styles'
 
 import {useWorkshop} from '../useWorkshop'
 import {NavbarBreadcrumbs} from './NavbarBreadcrumbs'
@@ -23,7 +23,7 @@ export const WorkshopNavbar = memo(function WorkshopNavbar(props: {
   const {story, title} = useWorkshop()
 
   return (
-    <Card className={force0LineHeight} borderBottom flex="none" padding={2}>
+    <Card className={navbarCard} borderBottom flex="none" padding={2}>
       <Flex gap={1}>
         <Box display={['block', 'block', 'none']} flex="none">
           <Button
@@ -38,7 +38,7 @@ export const WorkshopNavbar = memo(function WorkshopNavbar(props: {
         </Box>
 
         <Flex
-          className={forceMinWidth250}
+          className={navbarBreadcrumbsContainer}
           flex={1}
           justify={['center', 'center', 'flex-start']}
           padding={2}

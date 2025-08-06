@@ -4,7 +4,7 @@ import type {Display, ResponsiveProp} from '@sanity/ui/css'
 import {FontTextSize} from '@sanity/ui/theme'
 import {memo, useCallback, useMemo, useState} from 'react'
 
-import {force0LineHeight, workshopNavigator} from '#styles'
+import {navigatorSearchCard, workshopNavigator} from '#styles'
 
 import {WorkshopScope, WorkshopStory} from '../config'
 import {EMPTY_ARRAY} from '../constants'
@@ -106,7 +106,7 @@ const NavigatorView = memo(function NavigatorView(props: {
     >
       <Flex direction="column" height="fill">
         <Layer flex="none">
-          <Card className={force0LineHeight} padding={2} shadow={1}>
+          <Card className={navigatorSearchCard} padding={2} shadow={1}>
             <TextInput
               border={false}
               clearButton={Boolean(query)}

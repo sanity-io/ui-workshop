@@ -1,7 +1,7 @@
 import {Box, Checkbox, Flex, Text} from '@sanity/ui'
 import {memo} from 'react'
 
-import {force0LineHeight} from '#styles'
+import {booleanPropBox} from '#styles'
 
 import {BooleanPropSchema} from '../types'
 import {useProps} from '../useProps'
@@ -16,7 +16,7 @@ export const BooleanProp = memo(function BooleanProp(props: {
 
   return (
     <Flex as="label" padding={3}>
-      <Box className={force0LineHeight} marginRight={2}>
+      <Box className={booleanPropBox} marginRight={2}>
         <Checkbox
           checked={value || false}
           onChange={(event) => setPropValue(schema.name, event.currentTarget.checked)}

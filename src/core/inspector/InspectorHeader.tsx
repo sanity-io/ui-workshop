@@ -1,7 +1,7 @@
 import {Card, Layer, Tab, TabList} from '@sanity/ui'
 import {memo, useCallback} from 'react'
 
-import {inspectorHeader} from '#styles'
+import {inspectorHeader, inspectorHeaderCard} from '#styles'
 
 import {InspectorTab} from './types'
 
@@ -14,7 +14,7 @@ export const InspectorHeader = memo(function InspectorHeader(props: {
 
   return (
     <Layer className={inspectorHeader} flex="none" position="sticky">
-      <Card padding={2} shadow={1}>
+      <Card className={inspectorHeaderCard} padding={2} shadow={1}>
         <TabList gap={1}>
           {tabs.map((tab) => (
             <InspectorTabView
