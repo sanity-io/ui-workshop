@@ -2,20 +2,13 @@
 import {Box, Card, Flex, TabPanel} from '@sanity/ui'
 import type {Display, ResponsiveProp} from '@sanity/ui/css'
 import {ElementType, memo, useState} from 'react'
-import {styled} from 'styled-components'
+
+import {workshopInspector} from '#styles'
 
 import {EMPTY_RECORD} from '../constants'
 import {useWorkshop} from '../useWorkshop'
 import {InspectorHeader} from './InspectorHeader'
 import {InspectorTab} from './types'
-
-const Root = styled(Card)`
-  @media screen and (min-width: 600px) {
-    border-left: 1px solid var(--card-border-color);
-    min-width: 180px;
-    max-width: 300px;
-  }
-`
 
 const MemoRender = memo(function MemoRender(props: {component: ElementType; options: any}) {
   const {component: Component, options} = props
@@ -47,7 +40,12 @@ export const WorkshopInspector = memo(function WorkshopInspector(props: {
   const display: ResponsiveProp<Display> = expanded ? ['block'] : ['none', 'none', 'block']
 
   return (
-    <Root display={display} flex={1} overflow={['hidden', 'hidden', 'auto']}>
+    <Card
+      className={workshopInspector}
+      display={display}
+      flex={1}
+      overflow={['hidden', 'hidden', 'auto']}
+    >
       <Flex direction="column" height="fill">
         {showTabs && <InspectorHeader currentTabId={tabId} onTabChange={setTabId} tabs={tabs} />}
 
@@ -79,6 +77,6 @@ export const WorkshopInspector = memo(function WorkshopInspector(props: {
           </Box>
         )}
       </Flex>
-    </Root>
+    </Card>
   )
 })

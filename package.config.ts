@@ -14,7 +14,7 @@ export default defineConfig({
     },
   },
   tsconfig: 'tsconfig.dist.json',
-  babel: {reactCompiler: true, styledComponents: true},
+  babel: {reactCompiler: true},
   reactCompilerOptions: {target: '19'},
   rollup: {
     output: {

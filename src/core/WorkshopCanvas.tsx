@@ -1,19 +1,12 @@
 import {Card, Container, Flex, Heading, Spinner, Stack, Text} from '@sanity/ui'
 import type {Display} from '@sanity/ui/css'
 import {memo, useMemo, useState} from 'react'
-import {styled} from 'styled-components'
+
+import {iframe} from '#styles'
 
 import {VIEWPORT_OPTIONS} from './constants'
 import {buildFrameUrl} from './helpers'
 import {useWorkshop} from './useWorkshop'
-
-const Frame = styled.iframe`
-  display: block;
-  border: 0;
-  height: 100%;
-  width: 100%;
-  view-transition-name: canvas;
-`
 
 /** @internal */
 export const WorkshopCanvas = memo(function WorkshopCanvas(props: {
@@ -43,7 +36,6 @@ export const WorkshopCanvas = memo(function WorkshopCanvas(props: {
   const frameStyle = useMemo(
     () => ({
       transform: `scale(${zoom})`,
-      transformOrigin: '0 0',
       width: `${100 / zoom}%`,
       height: `${100 / zoom}%`,
     }),
@@ -73,7 +65,7 @@ export const WorkshopCanvas = memo(function WorkshopCanvas(props: {
           width="auto"
         >
           <Card height="fill" shadow={1}>
-            <Frame ref={frameRef} src={initialFrameUrl} style={frameStyle} />
+            <iframe className={iframe} ref={frameRef} src={initialFrameUrl} style={frameStyle} />
           </Card>
         </Container>
       </Flex>

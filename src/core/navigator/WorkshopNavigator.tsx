@@ -3,7 +3,8 @@ import {Box, Card, Flex, Layer, TextInput} from '@sanity/ui'
 import type {Display, ResponsiveProp} from '@sanity/ui/css'
 import {FontTextSize} from '@sanity/ui/theme'
 import {memo, useCallback, useMemo, useState} from 'react'
-import {styled} from 'styled-components'
+
+import {workshopNavigator} from '#styles'
 
 import {WorkshopScope, WorkshopStory} from '../config'
 import {EMPTY_ARRAY} from '../constants'
@@ -12,14 +13,6 @@ import {buildMenu} from './helpers'
 import {SearchResults} from './SearchResults'
 import {StoryTree} from './StoryTree'
 import {MenuCollection, MenuList, MenuScope} from './types'
-
-const Root = styled(Card)`
-  @media screen and (min-width: 600px) {
-    border-right: 1px solid var(--card-border-color);
-    min-width: 180px;
-    max-width: 300px;
-  }
-`
 
 const flexNoneStyle: React.CSSProperties = {flex: 'none'}
 const lineHeightNoneStyle: React.CSSProperties = {lineHeight: 0}
@@ -107,7 +100,12 @@ const NavigatorView = memo(function NavigatorView(props: {
   )
 
   return (
-    <Root display={display} flex={1} overflow={['hidden', 'hidden', 'auto']}>
+    <Card
+      className={workshopNavigator}
+      display={display}
+      flex={1}
+      overflow={['hidden', 'hidden', 'auto']}
+    >
       <Flex direction="column" height="fill">
         <Layer style={flexNoneStyle}>
           <Card padding={2} shadow={1} style={lineHeightNoneStyle}>
@@ -141,6 +139,6 @@ const NavigatorView = memo(function NavigatorView(props: {
           )}
         </Card>
       </Flex>
-    </Root>
+    </Card>
   )
 })
