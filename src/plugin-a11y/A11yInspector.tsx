@@ -1,4 +1,5 @@
-import {Box, Card, CardTone, Code, Stack, Text} from '@sanity/ui'
+import {Box, Card, Code, Stack, Text} from '@sanity/ui'
+import type {CardTone} from '@sanity/ui/theme'
 import axe from 'axe-core'
 import {memo} from 'react'
 

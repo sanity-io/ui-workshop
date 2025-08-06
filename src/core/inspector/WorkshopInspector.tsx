@@ -11,6 +11,7 @@ import {InspectorTab} from './types'
 
 const Root = styled(Card)`
   @media screen and (min-width: 600px) {
+    border-left: 1px solid var(--card-border-color);
     min-width: 180px;
     max-width: 300px;
   }
@@ -46,7 +47,7 @@ export const WorkshopInspector = memo(function WorkshopInspector(props: {
   const display: ResponsiveProp<Display> = expanded ? ['block'] : ['none', 'none', 'block']
 
   return (
-    <Root display={display} flex={1} overflow={['hidden', 'hidden', 'auto']} shadow={1}>
+    <Root display={display} flex={1} overflow={['hidden', 'hidden', 'auto']}>
       <Flex direction="column" height="fill">
         {showTabs && <InspectorHeader currentTabId={tabId} onTabChange={setTabId} tabs={tabs} />}
 

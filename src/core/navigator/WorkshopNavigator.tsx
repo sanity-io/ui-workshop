@@ -15,6 +15,7 @@ import {MenuCollection, MenuList, MenuScope} from './types'
 
 const Root = styled(Card)`
   @media screen and (min-width: 600px) {
+    border-right: 1px solid var(--card-border-color);
     min-width: 180px;
     max-width: 300px;
   }
