@@ -20,6 +20,17 @@ All notable changes to this project will be documented in this file. See
 
 ### Bug Fixes
 
+- add css import to entry ([7392a23](https://github.com/sanity-io/ui-workshop/commit/7392a23690c38d62485867f6fd8a46ed91aff192))
+- bring back borders ([6af4025](https://github.com/sanity-io/ui-workshop/commit/6af4025f9441497b0c3d5ce985e8567cceccd38e))
+- mark side-effects ([c785d45](https://github.com/sanity-io/ui-workshop/commit/c785d455114b02029d1c3137c97720ba1f449bb2))
+- remove useless shadow ([b204c66](https://github.com/sanity-io/ui-workshop/commit/b204c6654adcc19ee8c5f2ac619c77c70d11aedd))
+- test ui without styled-components ([c76b538](https://github.com/sanity-io/ui-workshop/commit/c76b5382d0f8fa9c8615c40d53ab6c4cb7a852cd))
+- use vanilla-extract ([472652c](https://github.com/sanity-io/ui-workshop/commit/472652cfb04f62ebcbcbe58b4079c5f3b5e8dcf6))
+
+## [3.1.3-static.1](https://github.com/sanity-io/ui-workshop/compare/v3.1.2...v3.1.3-static.1) (2025-08-06)
+
+### Bug Fixes
+
 - bring back borders ([6af4025](https://github.com/sanity-io/ui-workshop/commit/6af4025f9441497b0c3d5ce985e8567cceccd38e))
 - mark side-effects ([c785d45](https://github.com/sanity-io/ui-workshop/commit/c785d455114b02029d1c3137c97720ba1f449bb2))
 - remove useless shadow ([b204c66](https://github.com/sanity-io/ui-workshop/commit/b204c6654adcc19ee8c5f2ac619c77c70d11aedd))
