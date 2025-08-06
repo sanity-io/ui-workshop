@@ -27,7 +27,12 @@ function App(props: {config: WorkshopConfig}) {
   const [scheme, setScheme] = useState<ColorScheme>(prefersDark ? 'dark' : 'light')
 
   return (
-    <Root scheme={scheme}>
+    <Root lang="en" scheme={scheme}>
+      <meta charSet="utf-8" />
+      <meta
+        name="viewport"
+        content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover"
+      />
       <WorkshopFrame config={config} setScheme={setScheme} />
     </Root>
   )
