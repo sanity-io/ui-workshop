@@ -92,5 +92,3 @@ export const WorkshopProvider = memo(function WorkshopProvider(
     </WorkshopContext.Provider>
   )
 })
-
-WorkshopProvider.displayName = 'Memo(WorkshopProvider)'

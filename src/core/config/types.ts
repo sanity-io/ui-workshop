@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-
 import {ElementType, ReactNode} from 'react'
 
 /** @public */
