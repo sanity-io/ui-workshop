@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0-static.9](https://github.com/sanity-io/ui-workshop/compare/v4.0.0-static.8...v4.0.0-static.9) (2025-08-07)
+
+### Bug Fixes
+
+- stable bg color ([7e7cadd](https://github.com/sanity-io/ui-workshop/commit/7e7cadd203f73657b123497e172a4feafe88f675))
+
 ## [4.0.0-static.8](https://github.com/sanity-io/ui-workshop/compare/v4.0.0-static.7...v4.0.0-static.8) (2025-08-07)
 
 ### Bug Fixes
