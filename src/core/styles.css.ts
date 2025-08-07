@@ -74,7 +74,7 @@ export const workshopInspector = style([
   {
     '@media': {
       'screen and (min-width: 600px)': {
-        borderLeft: `1px solid ${fallbackVar(vars.color.border, 'var(--card-border-color)')}`,
+        borderLeft: `1px solid ${fallbackVar(vars.color.tinted.default.border[1], 'var(--card-border-color)')}`,
       },
     },
   },
@@ -85,7 +85,7 @@ export const workshopNavigator = style([
   {
     '@media': {
       'screen and (min-width: 600px)': {
-        borderRight: `1px solid ${fallbackVar(vars.color.border, 'var(--card-border-color)')}`,
+        borderRight: `1px solid ${fallbackVar(vars.color.tinted.default.border[1], 'var(--card-border-color)')}`,
       },
     },
   },
