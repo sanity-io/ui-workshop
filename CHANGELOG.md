@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0-static.11](https://github.com/sanity-io/ui-workshop/compare/v4.0.0-static.10...v4.0.0-static.11) (2025-08-07)
+
+### Bug Fixes
+
+- simplify media queries ([62055fc](https://github.com/sanity-io/ui-workshop/commit/62055fc645ed7a948b7ae45812868f663a82edd8))
+
 ## [4.0.0-static.10](https://github.com/sanity-io/ui-workshop/compare/v4.0.0-static.9...v4.0.0-static.10) (2025-08-07)
 
 ### Bug Fixes
