@@ -13,7 +13,9 @@ export function createViteConfig(options: {
   const {cwd, outDir, runtimeDir, vanillaExtract = true} = options
 
   return {
+    css: {transformer: 'lightningcss'},
     build: {
+      cssMinify: 'lightningcss',
       outDir,
       rollupOptions: {
         input: {
