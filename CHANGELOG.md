@@ -5,6 +5,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0-static.7](https://github.com/sanity-io/ui-workshop/compare/v4.0.0-static.6...v4.0.0-static.7) (2025-08-07)
+
+### Features
+
+- allow configuring vanilla extract ([0124dbf](https://github.com/sanity-io/ui-workshop/commit/0124dbfb244aa819904dbfd8a93a035535880ba3))
+- use lightningcss to minify css ([7322fd7](https://github.com/sanity-io/ui-workshop/commit/7322fd7f5b3cea51079bf90bb23051682f51940f))
+
 ## [4.0.0-static.6](https://github.com/sanity-io/ui-workshop/compare/v4.0.0-static.5...v4.0.0-static.6) (2025-08-06)
 
 ### Bug Fixes
