@@ -103,6 +103,7 @@ const NavigatorView = memo(function NavigatorView(props: {
       display={display}
       flex={1}
       overflow={['hidden', 'hidden', 'auto']}
+      borderRight={['none', 'none', 'solid']}
     >
       <Flex direction="column" height="fill">
         <Layer flex="none">

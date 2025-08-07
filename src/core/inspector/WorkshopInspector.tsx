@@ -43,6 +43,7 @@ export const WorkshopInspector = memo(function WorkshopInspector(props: {
       display={expanded ? ['block'] : ['none', 'none', 'block']}
       flex={1}
       overflow={['hidden', 'hidden', 'auto']}
+      borderLeft={['none', 'none', 'solid']}
     >
       <Flex direction="column" height="fill">
         {showTabs && <InspectorHeader currentTabId={tabId} onTabChange={setTabId} tabs={tabs} />}

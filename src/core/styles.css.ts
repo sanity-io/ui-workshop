@@ -1,11 +1,4 @@
-import {vars} from '@sanity/ui/css'
-import {
-  createVar,
-  createViewTransition,
-  fallbackVar,
-  globalStyle,
-  style,
-} from '@vanilla-extract/css'
+import {createVar, createViewTransition, globalStyle, style} from '@vanilla-extract/css'
 import {calc} from '@vanilla-extract/css-utils'
 
 globalStyle('html', {
@@ -18,12 +11,6 @@ globalStyle('html', {
 globalStyle('html, body', {
   height: '100%',
   margin: 0,
-})
-
-globalStyle('body', {
-  // Since `@sanity/ui-workshop` is used by `@sanity/ui` we need to fallback to a stable var that exists in dev
-  backgroundColor: fallbackVar(vars.color.tinted.default.bg[1], 'var(--card-bg-color)'),
-  overflow: 'auto',
 })
 
 export const canvasViewTransition = createViewTransition('canvas')
@@ -69,39 +56,12 @@ const workshopAside = style({
   },
 })
 
-export const workshopInspector = style([
-  workshopAside,
-  {
-    '@media': {
-      'screen and (min-width: 600px)': {
-        borderLeft: `1px solid ${fallbackVar(vars.color.tinted.default.border[1], 'var(--card-border-color)')}`,
-      },
-    },
-  },
-])
+export const workshopInspector = style([workshopAside])
 
-export const workshopNavigator = style([
-  workshopAside,
-  {
-    '@media': {
-      'screen and (min-width: 600px)': {
-        borderRight: `1px solid ${fallbackVar(vars.color.tinted.default.border[1], 'var(--card-border-color)')}`,
-      },
-    },
-  },
-])
+export const workshopNavigator = style([workshopAside])
 
 export const inspectorHeader = style({
   top: 0,
-})
-
-export const inspectorHeaderCard = style({
-  'lineHeight': 0,
-  '@media': {
-    'screen and (max-width: 599px)': {
-      textAlign: 'center',
-    },
-  },
 })
 
 export const workshopLayout = style({
