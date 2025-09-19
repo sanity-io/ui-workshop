@@ -167,7 +167,7 @@
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-is": "^19.1.1",
-    "semantic-release": "^23.1.1",
+    "semantic-release": "^24.2.9",
     "tsconfig-paths": "^4.2.0",
     "typescript": "5.9.2",
     "vitest": "^3.2.4"
