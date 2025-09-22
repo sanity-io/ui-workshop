@@ -177,7 +177,7 @@
     "react": "^19",
     "react-dom": "^19"
   },
-  "packageManager": "pnpm@9.15.9",
+  "packageManager": "pnpm@10.17.1",
   "publishConfig": {
     "access": "public"
   },
