@@ -139,7 +139,7 @@
     "@sanity/pkg-utils": "^7.11.7",
     "@sanity/prettier-config": "^1.0.6",
     "@sanity/semantic-release-preset": "^4.1.8",
-    "@sanity/ui": "4.0.0-static.19",
+    "@sanity/ui": "4.0.0-static.32",
     "@types/cpx": "^1.5.5",
     "@types/express": "^5.0.3",
     "@types/lodash": "^4.17.20",
