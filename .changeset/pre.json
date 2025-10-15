@@ -4,5 +4,7 @@
   "initialVersions": {
     "@sanity/ui-workshop": "4.0.0-static.11"
   },
-  "changesets": []
+  "changesets": [
+    "deep-cameras-matter"
+  ]
 }
