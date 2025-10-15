@@ -1,5 +1,11 @@
 <!-- markdownlint-disable --><!-- textlint-disable -->
 
+## 4.0.0-static.12
+
+### Patch Changes
+
+- [#185](https://github.com/sanity-io/ui-workshop/pull/185) [`4cc0738`](https://github.com/sanity-io/ui-workshop/commit/4cc0738310247e908ad94d29c03554c16248b8df) Thanks [@stipsan](https://github.com/stipsan)! - Update react compiler to v1
+
 ## 3.4.0
 
 ### Minor Changes
