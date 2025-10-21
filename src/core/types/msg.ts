@@ -1,4 +1,4 @@
-import {ThemeColorSchemeKey} from '@sanity/ui'
+import type {ColorScheme} from '@sanity/ui/theme'
 
 import {WorkshopState} from './state'
 
@@ -33,7 +33,7 @@ export interface WorkshopToggleSchemeMsg {
 /** @public */
 export interface WorkshopSetSchemeMsg {
   type: 'workshop/setScheme'
-  value: ThemeColorSchemeKey
+  value: ColorScheme
 }
 
 /** @public */

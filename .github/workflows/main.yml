@@ -5,6 +5,7 @@ on:
   pull_request:
     branches:
       - main
+      - static
 
 permissions:
   contents: read # for checkout

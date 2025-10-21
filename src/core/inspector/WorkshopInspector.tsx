@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import {Box, Card, Flex, TabPanel} from '@sanity/ui'
+import type {Display, ResponsiveProp} from '@sanity/ui/css'
 import {ElementType, memo, useState} from 'react'
 
 import {workshopInspector} from '#styles'
@@ -41,6 +42,8 @@ export const WorkshopInspector = memo(function WorkshopInspector(props: {
       className={workshopInspector}
       display={expanded ? ['block'] : ['none', 'none', 'block']}
       flex={1}
+      overflow={['hidden', 'hidden', 'auto']}
+      borderLeft={['none', 'none', 'solid']}
     >
       <Flex direction="column" height="fill">
         {showTabs && <InspectorHeader currentTabId={tabId} onTabChange={setTabId} tabs={tabs} />}

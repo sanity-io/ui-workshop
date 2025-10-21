@@ -8,11 +8,14 @@ export function createViteConfig(options: {
   cwd: string
   outDir: string
   runtimeDir: string
+  vanillaExtract: boolean | Parameters<typeof vanillaExtractPlugin>[0]
 }): UserConfig {
-  const {cwd, outDir, runtimeDir} = options
+  const {cwd, outDir, runtimeDir, vanillaExtract = true} = options
 
   return {
+    css: {transformer: 'lightningcss'},
     build: {
+      cssMinify: 'lightningcss',
       outDir,
       rollupOptions: {
         input: {
@@ -27,11 +30,11 @@ export function createViteConfig(options: {
       },
     },
     plugins: [
-      vanillaExtractPlugin(),
+      vanillaExtract && vanillaExtractPlugin(vanillaExtract === true ? undefined : vanillaExtract),
       react({
         babel: {plugins: [['babel-plugin-react-compiler', {target: '19'}]]},
       }),
-    ],
+    ].filter(Boolean),
     root: cwd,
   }
 }

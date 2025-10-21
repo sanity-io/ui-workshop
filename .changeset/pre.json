@@ -1,0 +1,10 @@
+{
+  "mode": "pre",
+  "tag": "static",
+  "initialVersions": {
+    "@sanity/ui-workshop": "4.0.0-static.11"
+  },
+  "changesets": [
+    "deep-cameras-matter"
+  ]
+}

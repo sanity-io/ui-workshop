@@ -1,3 +1,4 @@
+import type {vanillaExtractPlugin} from '@vanilla-extract/vite-plugin'
 import {InlineConfig} from 'vite'
 
 /** @public */
@@ -9,5 +10,6 @@ export interface WorkshopRuntime {
   server?: {
     port?: number
   }
+  vanillaExtract?: boolean | Parameters<typeof vanillaExtractPlugin>[0]
   vite?: (viteConfig: InlineConfig) => InlineConfig | Promise<InlineConfig>
 }

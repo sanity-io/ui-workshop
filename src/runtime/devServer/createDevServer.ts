@@ -15,7 +15,7 @@ export async function createDevServer(options: {
   const {cwd, outDir, runtime, runtimeDir} = options
 
   const baseViteConfig: InlineConfig = {
-    ...createViteConfig({cwd, outDir, runtimeDir}),
+    ...createViteConfig({cwd, outDir, runtimeDir, vanillaExtract: runtime?.vanillaExtract}),
     appType: 'custom', // don't include HTML middlewares
     configFile: false,
     logLevel: 'info',

@@ -17,18 +17,32 @@ export const OpenCanvasButton = memo(function OpenCanvasButton() {
     [frameUrl, path, payload, scheme, zoom, viewport],
   )
 
-  return (
+  const fontSize = 1
+  const iconRight = LaunchIcon
+  const mode = 'ghost'
+  const padding = 2
+  const text = 'Open story'
+  return canvasUrl ? (
     <Button
-      as={canvasUrl ? 'a' : 'button'}
-      disabled={!canvasUrl}
-      fontSize={1}
+      as="a"
       href={canvasUrl}
-      iconRight={LaunchIcon}
-      mode="ghost"
-      padding={2}
       rel="noopener noreferrer"
       target="_blank"
-      text="Open story"
+      fontSize={fontSize}
+      iconRight={iconRight}
+      mode={mode}
+      padding={padding}
+      text={text}
+    />
+  ) : (
+    <Button
+      as="button"
+      disabled
+      fontSize={fontSize}
+      iconRight={iconRight}
+      mode={mode}
+      padding={padding}
+      text={text}
     />
   )
 })
