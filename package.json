@@ -145,7 +145,7 @@
     "jsdom": "^22.1.0",
     "npm-run-all2": "^6.2.6",
     "prettier": "^3.6.2",
-    "react": "^19.2.0",
+    "react": "19.2.1",
     "react-dom": "^19.2.0",
     "react-is": "^19.2.0",
     "tsconfig-paths": "^4.2.0",
@@ -154,7 +154,7 @@
   },
   "peerDependencies": {
     "@sanity/ui": "^3",
-    "react": "^19",
+    "react": "19.2.1",
     "react-dom": "^19"
   },
   "packageManager": "pnpm@9.15.9",
