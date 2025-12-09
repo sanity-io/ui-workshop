@@ -146,7 +146,7 @@
     "npm-run-all2": "^6.2.6",
     "prettier": "^3.6.2",
     "react": "19.2.1",
-    "react-dom": "^19.2.0",
+    "react-dom": "19.2.1",
     "react-is": "^19.2.0",
     "tsconfig-paths": "^4.2.0",
     "typescript": "5.9.3",
@@ -155,7 +155,7 @@
   "peerDependencies": {
     "@sanity/ui": "^3",
     "react": "19.2.1",
-    "react-dom": "^19"
+    "react-dom": "19.2.1"
   },
   "packageManager": "pnpm@9.15.9",
   "publishConfig": {
