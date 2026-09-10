@@ -151,7 +151,7 @@
     "react-is": "^19.2.0",
     "tsconfig-paths": "^4.2.0",
     "typescript": "5.9.3",
-    "vitest": "^3.2.4"
+    "vitest": "^4.0.0"
   },
   "peerDependencies": {
     "@sanity/ui": "^4.0.0-0",
